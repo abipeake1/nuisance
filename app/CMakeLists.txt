@@ -31,7 +31,8 @@ LIST(APPEND TARGETS_TO_BUILD
   nuisbayes
   nuisbac
   nuisplot
-  PrepareGiBUU)
+  PrepareGiBUU
+  geniezexp)
 
 if(GENIE_ENABLED)
   LIST(APPEND TARGETS_TO_BUILD PrepareGENIE)
