@@ -12,7 +12,13 @@ endif()
 
 add_library(GeneratorCompileDependencies INTERFACE)
 add_library(GeneratorLinkDependencies INTERFACE)
-
+CPMFindPackage(
+    NAME eigen3
+    VERSION 3.4.0
+    GITLAB_REPOSITORY "libeigen/eigen"
+    GIT_TAG "3.4.0"
+)
+target_link_libraries(GeneratorCompileDependencies INTERFACE Eigen3::Eigen)
 if(DEFINED ROOT_VERSION_MAJOR)
   target_compile_definitions(GeneratorCompileDependencies INTERFACE ROOT_VERSION_MAJOR=${ROOT_VERSION_MAJOR})
 endif()
