@@ -1,0 +1,1 @@
+/usr/bin/g++   -std=c++17 -pipe -fsigned-char -pthread -O2 -g -DNDEBUG CMakeFiles/nuishistrange.dir/nuishistrange.cxx.o -o nuishistrange   -L/opt/root/v6-26-10/lib  -Wl,-rpath,/opt/root/v6-26-10/lib: -lCore -lRIO -lXMLIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathMore -lMathCore -lThread -lEG -lGeom -lGenVector 
