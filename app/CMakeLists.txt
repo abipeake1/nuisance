@@ -56,3 +56,6 @@ install(TARGETS ${TARGETS_TO_BUILD} DESTINATION bin)
 add_executable(nuishistrange nuishistrange.cxx)
 target_link_libraries(nuishistrange ROOT::ROOT)
 install(TARGETS nuishistrange DESTINATION bin)
+
+add_library(nusystematics_pca STATIC nusystematics_pca.cxx) #add new library with functions for PCA
+target_link_libraries(nusystematics_pca CoreTargets GeneratorLinkDependencies)

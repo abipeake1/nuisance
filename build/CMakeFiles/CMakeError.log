@@ -1,0 +1,192 @@
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wshorten64to32 failed with the following output:
+Change Dir: /root/software/nuisance/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_eee99/fast && gmake[1]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_eee99.dir/build.make CMakeFiles/cmTC_eee99.dir/build
+gmake[2]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_eee99.dir/src.cxx.o
+/usr/bin/g++ -DCOMPILER_SUPPORT_Wshorten64to32  -std=c++17 -pipe -fsigned-char -pthread -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror   -Wshorten-64-to-32 -o CMakeFiles/cmTC_eee99.dir/src.cxx.o -c /root/software/nuisance/build/CMakeFiles/CMakeTmp/src.cxx
+g++: error: unrecognized command-line option '-Wshorten-64-to-32'
+gmake[2]: *** [CMakeFiles/cmTC_eee99.dir/build.make:78: CMakeFiles/cmTC_eee99.dir/src.cxx.o] Error 1
+gmake[2]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_eee99/fast] Error 2
+gmake[1]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wcpp11extensions failed with the following output:
+Change Dir: /root/software/nuisance/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_44502/fast && gmake[1]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_44502.dir/build.make CMakeFiles/cmTC_44502.dir/build
+gmake[2]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_44502.dir/src.cxx.o
+/usr/bin/g++ -DCOMPILER_SUPPORT_Wcpp11extensions  -std=c++17 -pipe -fsigned-char -pthread -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Werror   -Wc++11-extensions -o CMakeFiles/cmTC_44502.dir/src.cxx.o -c /root/software/nuisance/build/CMakeFiles/CMakeTmp/src.cxx
+g++: error: unrecognized command-line option '-Wc++11-extensions'; did you mean '-fms-extensions'?
+gmake[2]: *** [CMakeFiles/cmTC_44502.dir/build.make:78: CMakeFiles/cmTC_44502.dir/src.cxx.o] Error 1
+gmake[2]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_44502/fast] Error 2
+gmake[1]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd981 failed with the following output:
+Change Dir: /root/software/nuisance/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3884f/fast && gmake[1]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_3884f.dir/build.make CMakeFiles/cmTC_3884f.dir/build
+gmake[2]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3884f.dir/src.cxx.o
+/usr/bin/g++ -DCOMPILER_SUPPORT_wd981  -std=c++17 -pipe -fsigned-char -pthread -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -wd981 -o CMakeFiles/cmTC_3884f.dir/src.cxx.o -c /root/software/nuisance/build/CMakeFiles/CMakeTmp/src.cxx
+g++: error: unrecognized command-line option '-wd981'
+gmake[2]: *** [CMakeFiles/cmTC_3884f.dir/build.make:78: CMakeFiles/cmTC_3884f.dir/src.cxx.o] Error 1
+gmake[2]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_3884f/fast] Error 2
+gmake[1]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd2304 failed with the following output:
+Change Dir: /root/software/nuisance/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_fdcd1/fast && gmake[1]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_fdcd1.dir/build.make CMakeFiles/cmTC_fdcd1.dir/build
+gmake[2]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_fdcd1.dir/src.cxx.o
+/usr/bin/g++ -DCOMPILER_SUPPORT_wd2304  -std=c++17 -pipe -fsigned-char -pthread -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -wd2304 -o CMakeFiles/cmTC_fdcd1.dir/src.cxx.o -c /root/software/nuisance/build/CMakeFiles/CMakeTmp/src.cxx
+g++: error: unrecognized command-line option '-wd2304'
+gmake[2]: *** [CMakeFiles/cmTC_fdcd1.dir/build.make:78: CMakeFiles/cmTC_fdcd1.dir/src.cxx.o] Error 1
+gmake[2]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_fdcd1/fast] Error 2
+gmake[1]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_STRICTANSI failed with the following output:
+Change Dir: /root/software/nuisance/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a23e8/fast && gmake[1]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_a23e8.dir/build.make CMakeFiles/cmTC_a23e8.dir/build
+gmake[2]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a23e8.dir/src.cxx.o
+/usr/bin/g++ -DCOMPILER_SUPPORT_STRICTANSI  -std=c++17 -pipe -fsigned-char -pthread -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -strict-ansi -o CMakeFiles/cmTC_a23e8.dir/src.cxx.o -c /root/software/nuisance/build/CMakeFiles/CMakeTmp/src.cxx
+g++: error: unrecognized command-line option '-strict-ansi'; did you mean '-fstrict-enums'?
+gmake[2]: *** [CMakeFiles/cmTC_a23e8.dir/build.make:78: CMakeFiles/cmTC_a23e8.dir/src.cxx.o] Error 1
+gmake[2]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_a23e8/fast] Error 2
+gmake[1]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Qunusedarguments failed with the following output:
+Change Dir: /root/software/nuisance/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_fb1cd/fast && gmake[1]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_fb1cd.dir/build.make CMakeFiles/cmTC_fb1cd.dir/build
+gmake[2]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_fb1cd.dir/src.cxx.o
+/usr/bin/g++ -DCOMPILER_SUPPORT_Qunusedarguments  -std=c++17 -pipe -fsigned-char -pthread -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -Qunused-arguments -o CMakeFiles/cmTC_fb1cd.dir/src.cxx.o -c /root/software/nuisance/build/CMakeFiles/CMakeTmp/src.cxx
+g++: error: unrecognized command-line option '-Qunused-arguments'
+gmake[2]: *** [CMakeFiles/cmTC_fb1cd.dir/build.make:78: CMakeFiles/cmTC_fb1cd.dir/src.cxx.o] Error 1
+gmake[2]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_fb1cd/fast] Error 2
+gmake[1]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wshorten64to32 failed with the following output:
+Change Dir: /root/software/nuisance/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_af8cb/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_af8cb.dir/build.make CMakeFiles/cmTC_af8cb.dir/build
+gmake[1]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_af8cb.dir/src.cxx.o
+/usr/bin/g++ -DCOMPILER_SUPPORT_Wshorten64to32  -std=c++17 -pipe -fsigned-char -pthread -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror   -Wshorten-64-to-32 -o CMakeFiles/cmTC_af8cb.dir/src.cxx.o -c /root/software/nuisance/build/CMakeFiles/CMakeTmp/src.cxx
+g++: error: unrecognized command-line option '-Wshorten-64-to-32'
+gmake[1]: *** [CMakeFiles/cmTC_af8cb.dir/build.make:78: CMakeFiles/cmTC_af8cb.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_af8cb/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wcpp11extensions failed with the following output:
+Change Dir: /root/software/nuisance/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_69e3c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_69e3c.dir/build.make CMakeFiles/cmTC_69e3c.dir/build
+gmake[1]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_69e3c.dir/src.cxx.o
+/usr/bin/g++ -DCOMPILER_SUPPORT_Wcpp11extensions  -std=c++17 -pipe -fsigned-char -pthread -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Werror   -Wc++11-extensions -o CMakeFiles/cmTC_69e3c.dir/src.cxx.o -c /root/software/nuisance/build/CMakeFiles/CMakeTmp/src.cxx
+g++: error: unrecognized command-line option '-Wc++11-extensions'; did you mean '-fms-extensions'?
+gmake[1]: *** [CMakeFiles/cmTC_69e3c.dir/build.make:78: CMakeFiles/cmTC_69e3c.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_69e3c/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd981 failed with the following output:
+Change Dir: /root/software/nuisance/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_1ad46/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1ad46.dir/build.make CMakeFiles/cmTC_1ad46.dir/build
+gmake[1]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1ad46.dir/src.cxx.o
+/usr/bin/g++ -DCOMPILER_SUPPORT_wd981  -std=c++17 -pipe -fsigned-char -pthread -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -wd981 -o CMakeFiles/cmTC_1ad46.dir/src.cxx.o -c /root/software/nuisance/build/CMakeFiles/CMakeTmp/src.cxx
+g++: error: unrecognized command-line option '-wd981'
+gmake[1]: *** [CMakeFiles/cmTC_1ad46.dir/build.make:78: CMakeFiles/cmTC_1ad46.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_1ad46/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd2304 failed with the following output:
+Change Dir: /root/software/nuisance/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f075b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f075b.dir/build.make CMakeFiles/cmTC_f075b.dir/build
+gmake[1]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f075b.dir/src.cxx.o
+/usr/bin/g++ -DCOMPILER_SUPPORT_wd2304  -std=c++17 -pipe -fsigned-char -pthread -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -wd2304 -o CMakeFiles/cmTC_f075b.dir/src.cxx.o -c /root/software/nuisance/build/CMakeFiles/CMakeTmp/src.cxx
+g++: error: unrecognized command-line option '-wd2304'
+gmake[1]: *** [CMakeFiles/cmTC_f075b.dir/build.make:78: CMakeFiles/cmTC_f075b.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_f075b/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_STRICTANSI failed with the following output:
+Change Dir: /root/software/nuisance/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0b2ee/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0b2ee.dir/build.make CMakeFiles/cmTC_0b2ee.dir/build
+gmake[1]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0b2ee.dir/src.cxx.o
+/usr/bin/g++ -DCOMPILER_SUPPORT_STRICTANSI  -std=c++17 -pipe -fsigned-char -pthread -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -strict-ansi -o CMakeFiles/cmTC_0b2ee.dir/src.cxx.o -c /root/software/nuisance/build/CMakeFiles/CMakeTmp/src.cxx
+g++: error: unrecognized command-line option '-strict-ansi'; did you mean '-fstrict-enums'?
+gmake[1]: *** [CMakeFiles/cmTC_0b2ee.dir/build.make:78: CMakeFiles/cmTC_0b2ee.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_0b2ee/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Qunusedarguments failed with the following output:
+Change Dir: /root/software/nuisance/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ddde9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ddde9.dir/build.make CMakeFiles/cmTC_ddde9.dir/build
+gmake[1]: Entering directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ddde9.dir/src.cxx.o
+/usr/bin/g++ -DCOMPILER_SUPPORT_Qunusedarguments  -std=c++17 -pipe -fsigned-char -pthread -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -Qunused-arguments -o CMakeFiles/cmTC_ddde9.dir/src.cxx.o -c /root/software/nuisance/build/CMakeFiles/CMakeTmp/src.cxx
+g++: error: unrecognized command-line option '-Qunused-arguments'
+gmake[1]: *** [CMakeFiles/cmTC_ddde9.dir/build.make:78: CMakeFiles/cmTC_ddde9.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/root/software/nuisance/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_ddde9/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }

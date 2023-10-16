@@ -1,0 +1,60 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 38,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "cmake",
+			"paths" : 
+			[
+				"CMessage.cmake",
+				"FindGENIE.cmake",
+				"FindGENIE2.cmake",
+				"FindGENIE3.cmake",
+				"FindGENIEDependencies.cmake",
+				"FindGENIEVersion.cmake",
+				"FindLHAPDF.cmake",
+				"FindNEUT53X.cmake",
+				"FindNEUT54X.cmake",
+				"FindNEUTConfigLegacy.cmake",
+				"FindNuWro.cmake",
+				"FindPythia6.cmake",
+				"Findlog4cpp.cmake",
+				"NEUT.cmake",
+				"NuHepMCModules.cmake",
+				"NuHepMCUtils.cmake",
+				"ParseConfigApps.cmake",
+				"ROOT.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	}
+}

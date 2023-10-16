@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/InputHandler.dir/BaseFitEvt.cxx.o"
+  "CMakeFiles/InputHandler.dir/BaseFitEvt.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/FitEvent.cxx.o"
+  "CMakeFiles/InputHandler.dir/FitEvent.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/FitEventInputHandler.cxx.o"
+  "CMakeFiles/InputHandler.dir/FitEventInputHandler.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/FitParticle.cxx.o"
+  "CMakeFiles/InputHandler.dir/FitParticle.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/GENIEInputHandler.cxx.o"
+  "CMakeFiles/InputHandler.dir/GENIEInputHandler.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/GIBUUInputHandler.cxx.o"
+  "CMakeFiles/InputHandler.dir/GIBUUInputHandler.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/GeneratorUtils.cxx.o"
+  "CMakeFiles/InputHandler.dir/GeneratorUtils.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/GiBUUNativeInputHandler.cxx.o"
+  "CMakeFiles/InputHandler.dir/GiBUUNativeInputHandler.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/HistogramInputHandler.cxx.o"
+  "CMakeFiles/InputHandler.dir/HistogramInputHandler.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/InputFactory.cxx.o"
+  "CMakeFiles/InputHandler.dir/InputFactory.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/InputHandler.cxx.o"
+  "CMakeFiles/InputHandler.dir/InputHandler.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/InputUtils.cxx.o"
+  "CMakeFiles/InputHandler.dir/InputUtils.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/NUANCEInputHandler.cxx.o"
+  "CMakeFiles/InputHandler.dir/NUANCEInputHandler.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/NuanceEvent.cxx.o"
+  "CMakeFiles/InputHandler.dir/NuanceEvent.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/SigmaQ0HistogramInputHandler.cxx.o"
+  "CMakeFiles/InputHandler.dir/SigmaQ0HistogramInputHandler.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/SplineInputHandler.cxx.o"
+  "CMakeFiles/InputHandler.dir/SplineInputHandler.cxx.o.d"
+  "CMakeFiles/InputHandler.dir/StdHepEvt.cxx.o"
+  "CMakeFiles/InputHandler.dir/StdHepEvt.cxx.o.d"
+  "libInputHandler.pdb"
+  "libInputHandler.so"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/InputHandler.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

@@ -27,6 +27,10 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+
+#define private public
+#define protected public
+
  
 //front matter for reweighting
 #include "Framework/Utils/RunOpt.h"
@@ -38,11 +42,53 @@
 #include "RwCalculators/GReWeightNuXSecCCQEaxial.h"
 #include "RwCalculators/GReWeightNuXSecCCQE.h"
 
+
+#include "RwCalculators/GReWeightNuXSecNCEL.h"
+#include "RwCalculators/GReWeightNuXSecCCQE.h"
+#include "RwCalculators/GReWeightNuXSecCCRES.h"
+#include "RwCalculators/GReWeightNuXSecCOH.h"
+#include "RwCalculators/GReWeightNonResonanceBkg.h"
+#include "RwCalculators/GReWeightFGM.h"
+#include "RwCalculators/GReWeightDISNuclMod.h"
+#include "RwCalculators/GReWeightResonanceDecay.h"
+#include "RwCalculators/GReWeightFZone.h"
+#include "RwCalculators/GReWeightINuke.h"
+#include "RwCalculators/GReWeightAGKY.h"
+#include "RwCalculators/GReWeightNuXSecCCQEaxial.h"
+#include "RwCalculators/GReWeightNuXSecCCQEvec.h"
+#include "RwCalculators/GReWeightNuXSecNCRES.h"
+#include "RwCalculators/GReWeightNuXSecDIS.h"
+#include "RwCalculators/GReWeightINukeParams.h"
+#include "RwCalculators/GReWeightNuXSecNC.h"
+#include "RwCalculators/GReWeightNuXSecCCQE.h"
+
 using namespace std;
 using namespace genie;
 using namespace genie::rew;
 fstream file;
 
+namespace PRD_93_113015 {
+Eigen::Vector4d a_14_cv{
+    2.3,
+    -0.6,
+    -3.8,
+    2.3,
+};
+Eigen::Vector4d a_14_errors{0.13, 1, 2.5, 2.7};
+Eigen::Matrix4d a_14_correlation{{1, 0.350, -0.678, 0.611},
+                                 {0.350, 1, -0.898, 0.367},
+                                 {-0.678, -0.898, 1, -0.685},
+                                 {0.611, 0.367, -0.685, 1}};
+Eigen::MatrixXd a_14_cov() {
+  Eigen::MatrixXd a_14_cov = a_14_correlation;
+  for (int i = 0; i < a_14_correlation.rows(); ++i) {
+    for (int j = 0; j < a_14_correlation.cols(); ++j) {
+      a_14_cov(i, j) = a_14_correlation(i, j) * a_14_errors[i] * a_14_errors[j];
+    }
+  }
+  return a_14_cov;
+}
+}
 
 void print(std::vector <float> const &a) {
    std::cout << "The random b values for the uncorellated basis are : ";
@@ -50,10 +96,6 @@ void print(std::vector <float> const &a) {
    for(int i=0; i < a.size(); i++)
    std::cout << a.at(i) << ' ';
 }
-
-
-
-//G18_02a_00_000
 
 Eigen::MatrixXd Covariance_Matrix {{0.0169, 0.0455, -0.22035, 0.214461},
   {0.0455, 1. ,-2.245, 0.9909},
@@ -66,7 +108,6 @@ Eigen::MatrixXd  corr{{1, 0.350, -0.678, 0.611},
 {-0.678, -0.898,  1,  -0.685},
 {0.611,  0.367, -0.685,  1}};
 
-
 std::vector<double> random_b_params;
 std::vector<double> translated_bparams;
 std::vector<double> genie_values;
@@ -76,6 +117,8 @@ Eigen::MatrixXd GetPCAFromCorr(){
   Eigen::MatrixXd Eigenvalues;
   Eigen::VectorXd eigenvalues_sqrt;  //use for scaling new basis
   Eigen::MatrixXd eigenvector_colmatrix;
+  Eigen::MatrixXd eigenvalue_sqrt_matrix;
+  //Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> eigensolver(Covariance_Matrix);
   Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> eigensolver(Covariance_Matrix);
     if (eigensolver.info() != Eigen::Success) abort();
     //std::cout << "The eigenvalues of covariance matrix are:\n" << eigensolver.eigenvalues() << std::endl;
@@ -84,17 +127,22 @@ Eigen::MatrixXd GetPCAFromCorr(){
     Eigenvalues = (eigensolver.eigenvalues()).asDiagonal();
     eigenvector_colmatrix = eigensolver.eigenvectors();
     eigenvalues_sqrt = (eigensolver.eigenvalues()).array().sqrt();
-    
-  Eigen::MatrixXd PCA = eigenvalues_sqrt * eigenvector_colmatrix;
 
+    eigenvalue_sqrt_matrix = eigenvalues_sqrt.asDiagonal();    
+  Eigen::MatrixXd PCA = eigenvalue_sqrt_matrix * eigenvector_colmatrix; 
+ 
   std::cout << "SQRT_Eigenvalues: " << eigenvalues_sqrt << std::endl;
   std::cout << "Eigenvectors: " << eigenvector_colmatrix << std::endl;
   std::cout << "Scaling aka PCA: " << PCA << std::endl;
 
- for(size_t i = 0; i < 4; ++i){
-  eigenvector_colmatrix.col(i) *= eigenvalues_sqrt[i];
+  for(size_t i = 0; i < 4; ++i){
+  std::cout<<"eigenvalue"<<i <<"i"<<Eigenvalues.col(i) << std::endl;
+  std::cout<<"eigen vector"<<i <<"is"<<eigenvector_colmatrix.col(i) << std::endl;
  }
+ for(size_t i = 0; i < 4; ++i){
+  eigenvector_colmatrix.col(i) *= eigenvalues_sqrt[i]; //orinal
 
+ }
  return eigenvector_colmatrix;
 }
 
@@ -103,16 +151,12 @@ Eigen::VectorXd GetAVals(std::vector<double> const &BVals, Eigen::MatrixXd const
  std::cout << "In GetAVals function: " << std::endl;
   Eigen::VectorXd avals = Eigen::VectorXd::Zero(4);
   for(size_t i = 0; i < 4; ++i){
-    avals += PCA.col(i) * BVals[i];
-
-   /* 
+    avals += PCA.col(i) * BVals[i]; 
     std::cout<<"in for loop in GetAVals function and this is loop" << i <<std::endl;
     std::cout<< "The bvalues are" << BVals[i] <<std::endl;
     std::cout<<"PCA.col(i) is" << PCA.col(i)<<std::endl;
-    */
   }
   std::cout<<"The a values just formed are" << avals<<std::endl;
- // avals = avals + a_central_values;
   return avals;
 }
 
@@ -122,7 +166,6 @@ vector<Eigen::VectorXd> syst_avals_vector;
 Eigen::Array4d central_values_a_from_genie = {2.30 ,-0.60 ,-3.80 ,2.30};
 Eigen::Array4d central_values_afrom_errors_genie_code = {0.14,0.67,1,0.75};//-----in genie
 Eigen::Array4d central_values_afrom_errors_genie = {0.13,1,2.5,2.7};
-Eigen::Vector4d product = central_values_a_from_genie*central_values_afrom_errors_genie;
 
 Eigen::Array4d GetTransformedBparams(std::vector<double> const &BVals){
   Eigen::VectorXd ttree_systematic_avals = GetAVals(BVals, GetPCAFromCorr());
@@ -132,34 +175,66 @@ Eigen::Array4d GetTransformedBparams(std::vector<double> const &BVals){
 Eigen::Array4d ScaleAparamsforGenie(std::vector<double> const &BVals){
   Eigen::VectorXd syst_avals = GetAVals(BVals, GetPCAFromCorr());
   std::cout << " syst_avals......Systematic a values" << syst_avals << std::endl;
-  Eigen::VectorXd avalues_for_genie = syst_avals.array()/central_values_afrom_errors_genie_code.array();
+  // xp[i] = (P'[i]/P[i]) - 1)/fracerr_zexp[i]
+  Eigen::VectorXd avalues_for_genie =
+      (((PRD_93_113015::a_14_cv + syst_avals).array() / central_values_a_from_genie.array()) -
+       1.0) /
+      central_values_afrom_errors_genie_code.array();
   return avalues_for_genie;
 }
 
 void SetSystematicInTermsOfB(std::vector<double> const &BVals, GReWeightNuXSecCCQE &grw){
-  std::cout << "In SetSystematicintermsofb fn " << std::endl;
   Eigen::MatrixXd corr = Eigen::MatrixXd::Zero(4,4);
   std::vector<GSyst_t> syst_dials = {kXSecTwkDial_ZExpA1CCQE, kXSecTwkDial_ZExpA2CCQE,kXSecTwkDial_ZExpA3CCQE, kXSecTwkDial_ZExpA4CCQE};
   Eigen::VectorXd syst_avals = GetAVals(BVals, GetPCAFromCorr());
-  Eigen::VectorXd avalues_for_genie = syst_avals.array()/central_values_afrom_errors_genie_code.array();
+  Eigen::VectorXd avalues_for_genie_old = syst_avals.array()/central_values_afrom_errors_genie_code.array();
+  
+  Eigen::VectorXd avalues_for_genie =
+      (((PRD_93_113015::a_14_cv + syst_avals).array() / central_values_a_from_genie.array()) -
+       1.0) /
+      central_values_afrom_errors_genie_code.array();
+
+  Eigen::Array4d actual_a_values;
+  
   syst_avals_vector.push_back(syst_avals);
   for(size_t i = 0; i < 4; ++i){
     std::cout << "i is" << i << std::endl;
     grw.SetMode(GReWeightNuXSecCCQE::kModeZExp);
     //grw.SetSystematic(syst_dials[i], syst_avals[i]);
     grw.SetSystematic(syst_dials[i], avalues_for_genie[i]);
-     std::cout<<"sdone set systematic"<<std::endl;
-     std::cout<<"syst dial"<< i << syst_dials[i] << "and syst_aval[i]" <<syst_avals[i]<<std::endl;
+    std::cout<<"sdone set systematic"<<std::endl;
+    std::cout<<"syst dial"<< i << syst_dials[i] << "and syst_aval[i]" <<syst_avals[i]<<std::endl;
+    std::cout<<"a values for genie are"<< i <<avalues_for_genie[i] << std::endl;
+    actual_a_values[i]=avalues_for_genie[i]+ central_values_a_from_genie[i];
+  }
+  std::cout<<"actual a values are-----------" << std::endl;
+  for(size_t i = 0; i < 4; ++i){
+    std::cout<< actual_a_values[i]<<std::endl;
   }
   std::cout<<"about to reconfigure"<<std::endl;
+
+  //Debugging for genie parameters
+  std::cout << "GENIE::RW -- fZExpMaxCoef: " << grw.fZExpMaxCoef << std::endl;
+  for(int i = 0; i < grw.fZExpMaxCoef; ++i){
+   std::cout << "The initial tweak dial for GENIE parameter for a is [" << i + 1 << "]GENIE::RW -- fZExpTwkDial[" << i << "]: " << grw.fZExpTwkDial[i] << std::endl;
+    std::cout << "The initial expected GENIE parameter for a[" << i + 1 << "]GENIE::RW -- fZExpDef[" << i << "]: " << grw.fZExpDef[i] << std::endl;
+    std::cout << "The initial current GENIE parameter for  a[" << i + 1 << "]is GENIE::RW -- fZExpCurr[" << i << "]: " << grw.fZExpCurr[i] << std::endl;
+  }
   grw.Reconfigure();
   std::cout<<"done reconfigure"<<std::endl;
-  
+  //more debugging for GENIE
+  std::cout << "GENIE::RW -- fZExpMaxCoef: " << grw.fZExpMaxCoef << std::endl;
+  for(int i = 0; i < grw.fZExpMaxCoef; ++i){
+    std::cout << "The updated tweak dial for GENIE parameter for a is [" << i + 1 << "]GENIE::RW -- fZExpTwkDial[" << i << "]: " << grw.fZExpTwkDial[i] << std::endl;
+    std::cout << "The updated expected GENIE parameter for a[" << i + 1 << "]GENIE::RW -- fZExpDef[" << i << "]: " << grw.fZExpDef[i] << std::endl;
+    std::cout << "The updated current GENIE parameter for  a[" << i + 1 << "]is GENIE::RW -- fZExpCurr[" << i << "]: " << grw.fZExpCurr[i] << std::endl;
+  }
 }
+
 
 int main(int argc, char const *argv[]) {
 
-TFile *file_out = TFile::Open("myoutput_test_new_10e5_2608_new_lowerbins.root","RECREATE");
+TFile *file_out = TFile::Open("test_2409.root","RECREATE");
 TTree *tree_out = new TTree("mytree","mytreetitle");
   
   //Somewhere near the top of the main function, before we do any file reading
@@ -172,17 +247,12 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
 
   //We need to work out what the TUNE name actually is
  // std::string Tune_name = "G18_02a_00_000"; //find Tune_name using echo $GENIE_XSEC_TUNE
-
-  //Different TUNE THAT might work with z-expansion = G18_10i_02_11a
-  std::string Tune_name = "G18_10i_02_11a"; 
+  std::string Tune_name = "G18_10i_02_11a"; //Different TUNE that does work with z-expansion = G18_10i_02_11a
   grunopt->SetTuneName(Tune_name);
   grunopt->BuildTune();
   std::string genv =
       std::string(getenv("GENIE")) + "/config/Messenger_laconic.xml";
   // genie::utils::app_init::MesgThresholds(genv);
-
-  
-
 
   //This is the re-weighting tool in GENIE
   genie::rew::GReWeightNuXSecCCQEaxial myaxreweighter; //probably dont need this anymore
@@ -200,10 +270,43 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
   genie::rew::GReWeightNuXSecCCQE myccqereweighter_altogether_minus; //reweight a1 a2 a3 a4 simul.
 
 
+  //changing 2 aparms by 1std simultaneosly 
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_a1_a2;
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_a1_a2_minus;
+
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_a1_a3;
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_a1_a3_minus;
+
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_a1_a4;
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_a1_a4_minus; 
+
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_a2_a3;
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_a2_a3_minus;
+
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_a2_a4;
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_a2_a4_minus;
+
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_a3_a4;
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_a3_a4_minus;
+
+
+  //change 3 a params simultaneously
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_rw_a1_a2_a3;
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_rw_a1_a2_a3_minus;
+
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_rw_a2_a3_a4;
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_rw_a2_a3_a4_minus;
+
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_rw_a1_a2_a4;
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_rw_a1_a2_a4_minus;
+
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_rw_a1_a3_a4;
+  genie::rew::GReWeightNuXSecCCQE myccqereweighter_rw_a1_a3_a4_minus;
   
   //New calculator for the new basis
   genie::rew::GReWeightNuXSecCCQE myccqereweighter_a_newbasis_plus;
   
+
   genie::rew::GReWeightNuXSecCCQE myccqereweighter_rw_b1;
   genie::rew::GReWeightNuXSecCCQE myccqereweighter_rw_b2;
   genie::rew::GReWeightNuXSecCCQE myccqereweighter_rw_b3;
@@ -253,21 +356,15 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
 
 
   myaxreweighter.Reset();
-  //std::cout<< "ccqe reweighter b1"<<std::endl;
+ 
   SetSystematicInTermsOfB({1,0,0,0}, myccqereweighter_rw_b1);
-  //std::cout<< "ccqe reweighter b2"<<std::endl;
   SetSystematicInTermsOfB({0,1,0,0}, myccqereweighter_rw_b2);
-   //std::cout<< "ccqe reweighter b3"<<std::endl;
   SetSystematicInTermsOfB({0,0,1,0}, myccqereweighter_rw_b3);
-  //std::cout<< "ccqe reweighter b4"<<std::endl;
   SetSystematicInTermsOfB({0,0,0,1}, myccqereweighter_rw_b4);
 
   SetSystematicInTermsOfB({-1,0,0,0}, myccqereweighter_rw_b1_minus);
-  //std::cout<< "ccqe reweighter b2"<<std::endl;
   SetSystematicInTermsOfB({0,-1,0,0}, myccqereweighter_rw_b2_minus);
-   //std::cout<< "ccqe reweighter b3"<<std::endl;
   SetSystematicInTermsOfB({0,0,-1,0}, myccqereweighter_rw_b3_minus);
-  //std::cout<< "ccqe reweighter b4"<<std::endl;
   SetSystematicInTermsOfB({0,0,0,-1}, myccqereweighter_rw_b4_minus);
    
   SetSystematicInTermsOfB({1,1,0,0}, myccqereweighter_rw_b1_b2);
@@ -364,8 +461,99 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
   myccqereweighter_altogether_minus.SetSystematic(kXSecTwkDial_ZExpA4CCQE, -1);
   myccqereweighter_altogether_minus.Reconfigure();
  
-//#if true
+  myccqereweighter_a1_a2.SetMode(GReWeightNuXSecCCQE::kModeZExp);
+  myccqereweighter_a1_a2.SetSystematic(kXSecTwkDial_ZExpA1CCQE, 1);
+  myccqereweighter_a1_a2.SetSystematic(kXSecTwkDial_ZExpA2CCQE, 1);
+  myccqereweighter_a1_a2.Reconfigure();
   
+  myccqereweighter_a1_a2_minus.SetMode(GReWeightNuXSecCCQE::kModeZExp);
+  myccqereweighter_a1_a2_minus.SetSystematic(kXSecTwkDial_ZExpA1CCQE, -1);
+  myccqereweighter_a1_a2_minus.SetSystematic(kXSecTwkDial_ZExpA2CCQE, -1);
+  myccqereweighter_a1_a2_minus.Reconfigure();
+
+  myccqereweighter_a1_a3.SetMode(GReWeightNuXSecCCQE::kModeZExp);
+  myccqereweighter_a1_a3.SetSystematic(kXSecTwkDial_ZExpA1CCQE, 1);
+  myccqereweighter_a1_a3.SetSystematic(kXSecTwkDial_ZExpA3CCQE, 1);
+  myccqereweighter_a1_a3.Reconfigure();
+
+  myccqereweighter_a1_a3_minus.SetMode(GReWeightNuXSecCCQE::kModeZExp);
+  myccqereweighter_a1_a3_minus.SetSystematic(kXSecTwkDial_ZExpA1CCQE, -1);
+  myccqereweighter_a1_a3_minus.SetSystematic(kXSecTwkDial_ZExpA3CCQE, -1);
+  myccqereweighter_a1_a3_minus.Reconfigure();
+
+  myccqereweighter_a1_a4.SetMode(GReWeightNuXSecCCQE::kModeZExp);
+  myccqereweighter_a1_a4.SetSystematic(kXSecTwkDial_ZExpA1CCQE, 1);
+  myccqereweighter_a1_a4.SetSystematic(kXSecTwkDial_ZExpA4CCQE, 1);
+  myccqereweighter_a1_a4.Reconfigure();
+
+  myccqereweighter_a1_a4_minus.SetMode(GReWeightNuXSecCCQE::kModeZExp); 
+  myccqereweighter_a1_a4_minus.SetMode(GReWeightNuXSecCCQE::kModeZExp);
+  myccqereweighter_a1_a4_minus.SetSystematic(kXSecTwkDial_ZExpA1CCQE,-1);
+  myccqereweighter_a1_a4_minus.SetSystematic(kXSecTwkDial_ZExpA4CCQE, -1);
+  myccqereweighter_a1_a4_minus.Reconfigure();
+
+  myccqereweighter_a2_a3.SetMode(GReWeightNuXSecCCQE::kModeZExp);
+  myccqereweighter_a2_a3.SetSystematic(kXSecTwkDial_ZExpA2CCQE, 1);
+  myccqereweighter_a2_a3.SetSystematic(kXSecTwkDial_ZExpA3CCQE, 1);
+  myccqereweighter_a2_a3.Reconfigure();
+
+
+  myccqereweighter_a2_a3_minus.SetMode(GReWeightNuXSecCCQE::kModeZExp);
+  myccqereweighter_a2_a3_minus.SetSystematic(kXSecTwkDial_ZExpA2CCQE, -1);
+  myccqereweighter_a2_a3_minus.SetSystematic(kXSecTwkDial_ZExpA3CCQE, -1);
+  myccqereweighter_a2_a3_minus.Reconfigure();
+
+  myccqereweighter_a2_a4.SetMode(GReWeightNuXSecCCQE::kModeZExp);
+  myccqereweighter_a2_a4.SetSystematic(kXSecTwkDial_ZExpA2CCQE, 1);
+  myccqereweighter_a2_a4.SetSystematic(kXSecTwkDial_ZExpA4CCQE, 1);
+  myccqereweighter_a2_a4.Reconfigure();
+
+  myccqereweighter_a2_a4_minus.SetMode(GReWeightNuXSecCCQE::kModeZExp);
+  myccqereweighter_a2_a4_minus.SetSystematic(kXSecTwkDial_ZExpA2CCQE, -1);
+  myccqereweighter_a2_a4_minus.SetSystematic(kXSecTwkDial_ZExpA4CCQE, -1);
+  myccqereweighter_a2_a4_minus.Reconfigure();
+
+
+  myccqereweighter_a3_a4.SetMode(GReWeightNuXSecCCQE::kModeZExp);
+  myccqereweighter_a3_a4.SetSystematic(kXSecTwkDial_ZExpA3CCQE, 1);
+  myccqereweighter_a3_a4.SetSystematic(kXSecTwkDial_ZExpA4CCQE, 1);
+  myccqereweighter_a3_a4.Reconfigure();
+
+  myccqereweighter_a3_a4_minus.SetMode(GReWeightNuXSecCCQE::kModeZExp);
+  myccqereweighter_a3_a4_minus.SetSystematic(kXSecTwkDial_ZExpA3CCQE, -1);
+  myccqereweighter_a3_a4_minus.SetSystematic(kXSecTwkDial_ZExpA4CCQE, -1);
+  myccqereweighter_a3_a4_minus.Reconfigure();
+
+  /* ------------------------- Ask Luke
+  //std::vector<std::unique_ptr<GReWeightNuXSecCCQE>> list_of_reweighters;
+  std::vector<genie::rew::GReWeightNuXSecCCQE> list_of_reweighters= {myccqereweighter_a1_a2,myccqereweighter_a1_a2_minus};
+  std::vector<vector<int>> what_params_to_reweight = {{1,1,0,0}, 
+                                                         {-1,-1,0,0}};
+  std::vector<GSyst_t> dials = {kXSecTwkDial_ZExpA1CCQE, kXSecTwkDial_ZExpA2CCQE,kXSecTwkDial_ZExpA3CCQE, kXSecTwkDial_ZExpA4CCQE};
+  for (int i = 0; i < 2; i++){
+    //list_of_reweighters.push_back(std::make_unique <genie::rew::GReWeightNuXSecCCQE>());
+    genie::rew::GReWeightNuXSecCCQE list_of_reweighters[i];
+    std::cout<<"list_of_reweighters[i]"<<i<<std::endl;
+    //list_of_reweighters.back().SetMode(GReWeightNuXSecCCQE::kModeZExp);
+    for(int j=0; j<4; j++){
+      std::cout<<"infor loop j is "<<j<<std::endl;
+      std::cout<<"what_params_to_reweight[i][j]"<<what_params_to_reweight[i][j]<<std::endl;
+      list_of_reweighters[i].SetSystematic(dials[j], what_params_to_reweight[i][j]);
+      std::cout<<"done set systematic"<<std::endl;
+    }    
+    std::cout<<"about to reconfigure "<<std::endl;
+    list_of_reweighters[i].Reconfigure();
+    std::cout<<"done reconfigure in loop"<<std::endl;
+  }
+*/
+std::vector<TH1D *> myhists_reweighting_aparams;
+    for (int i = 0; i < 2; i++) {
+      std::stringstream ss("");
+      ss << "reweighter" << i;
+
+      myhists_reweighting_aparams.push_back(new TH1D(ss.str().c_str(), ";Q2;count", 35, 0, 7));
+    }
+//#if true
   /////New baisis Reweighting
   myccqereweighter_a_newbasis_plus.SetMode(GReWeightNuXSecCCQE::kModeZExp);
   std::cout<<"Set mode on new basus reweighter"<<std::endl;
@@ -434,7 +622,27 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
   TH1 *q2_hist_rw_a4_minus = new TH1D("Q2histrwa4minus","q2;Q^{2};Count",35,0,7);
   TH1 *q2_hist_rw_altogether_minus = new TH1D("Q2histrwaltogetherminus","q2;Q^{2};Count",35,0,7);
 
+  TH1 *q2_hist_myccqereweighter_rw_a1_a2 = new TH1D("Q2hist_myccqereweighter_rw_a1_a2","q2;Q^{2};Count",35,0,7);
+  TH1 *q2_hist_myccqereweighter_rw_a1_a2_minus = new TH1D("Q2hist_myccqereweighter_rw_a1_a2_minus","q2;Q^{2};Count",35,0,7);
+  
+  TH1 *q2_hist_myccqereweighter_rw_a3_a4_minus = new TH1D("Q2hist_myccqereweighter_rw_a3_a4_minus","q2;Q^{2};Count",35,0,7);
+  
 
+  TH1 *q2_hist_myccqereweighter_rw_a1_a3 = new TH1D("Q2hist_myccqereweighter_rw_a1_a3","q2;Q^{2};Count",35,0,7);
+  TH1 *q2_hist_myccqereweighter_rw_a1_a3_minus = new TH1D("Q2hist_myccqereweighter_rw_a1_a3_minus","q2;Q^{2};Count",35,0,7);
+  
+  TH1 *q2_hist_myccqereweighter_rw_a2_a3 = new TH1D("Q2hist_myccqereweighter_rw_a2_a3","q2;Q^{2};Count",35,0,7);
+  TH1 *q2_hist_myccqereweighter_rw_a2_a3_minus = new TH1D("Q2hist_myccqereweighter_rw_a1_a3_minus","q2;Q^{2};Count",35,0,7);
+  
+  TH1 *q2_hist_myccqereweighter_rw_a1_a4 = new TH1D("Q2hist_hist_myccqereweighter_rw_a1_a4","q2;Q^{2};Count",35,0,7);
+  TH1 *q2_hist_myccqereweighter_rw_a1_a4_minus = new TH1D("Q2hist_myccqereweighter_rw_a1_a4_minus","q2;Q^{2};Count",35,0,7);
+  
+  TH1 *q2_hist_myccqereweighter_rw_a2_a4 = new TH1D("Q2hist_myccqereweighter_rw_a2_a4","q2;Q^{2};Count",35,0,7);
+  TH1 *q2_hist_myccqereweighter_rw_a2_a4_minus = new TH1D("Q2hist_myccqereweighter_rw_a2_a4_minus","q2;Q^{2};Count",35,0,7);
+  
+  TH1 *q2_hist_myccqereweighter_rw_a3_a4 = new TH1D("Q2hist_myccqereweighter_rw_a3_a4","q2;Q^{2};Count",35,0,7);
+  TH1 *q2_hist_myccqereweighter_rw_a3_a3_minus = new TH1D("Q2hist_myccqereweighter_rw_a3_a4_minus","q2;Q^{2};Count",35,0,7);
+  
   TH1 *q2_hist_myccqereweighter_rw_b1 = new TH1D("Q2hist_myccqereweighter_rw_b1","q2;Q^{2};Count",35,0,7);
   TH1 *q2_hist_myccqereweighter_rw_b2 = new TH1D("Q2hist_myccqereweighter_rw_b2","q2;Q^{2};Count",35,0,7);
   TH1 *q2_hist_myccqereweighter_rw_b3 = new TH1D("Q2hist_myccqereweighter_rw_b3","q2;Q^{2};Count",35,0,7);
@@ -497,7 +705,6 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
   tree_out->Branch("translated_bparams", &ttree_systematic_avals);
   tree_out->Branch("avalues_for_genie_vector", &ttree_avalues_for_genie_vector);
   
-
   int NThrows = 100;
   std::cout<<"Done N throws-------------------------"<<std::endl;
   std::vector<TH1D *> myhists;
@@ -509,25 +716,18 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
 
       myhists.push_back(new TH1D(ss.str().c_str(), ";Q2;count", 35, 0, 7));
     }
-    
-  // if we want to do throws
-  
   int seed = 12345;
   TRandom3* ran = new TRandom3(seed);
 
   std::vector<vector<Double_t>> randbval_vector;
-  //tree_out->Branch("randbval_vector",&random_basis_b);
   std::vector<std::unique_ptr<GReWeightNuXSecCCQE>> rand_b_reweight_engines; // vector of reweighters
   for (int throw_i = 0; throw_i < NThrows; throw_i++) {
     
     rand_b_reweight_engines.push_back(std::make_unique <genie::rew::GReWeightNuXSecCCQE>());
     vector<Double_t> randbvals;
     for (int i = 0; i < 4; ++i) {
-      // n.b. this is flat throw in B, but we really want gaussian
       Double_t x = ran->Gaus(0,1);
-      //std::cout<< x<< std::endl;
       randbvals.push_back(x);
-      //std::cout<<"random b value in loop" << i << "is"<<randbvals[i]<<std::endl;
     }
     b_params_out[0]=randbvals[0];
     b_params_out[1]=randbvals[1];
@@ -543,7 +743,6 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
     ttree_avalues_for_genie_vector[1]=ScaleAparamsforGenie(randbvals)(1);
     ttree_avalues_for_genie_vector[2]=ScaleAparamsforGenie(randbvals)(2);
     ttree_avalues_for_genie_vector[3]=ScaleAparamsforGenie(randbvals)(3);
-    
 
     GetTransformedBparams(randbvals);
     ScaleAparamsforGenie(randbvals);
@@ -553,26 +752,21 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
     std::cout << "The length of the vector rand_b_reweight_engines is " << rand_b_reweight_engines.size() <<std::endl;
     tree_out->Fill();
   }
-  // make sure the throw_weights vector is the right size before we start
-  // putting stuff in it.
+  // make sure the throw_weights vector is the right size before we start putting stuff in it.
   std::vector<double> throw_weights;
   for (int i = 0; i < NThrows; ++i) {
     throw_weights.push_back(1);
   }
   
-  TFile *results = new TFile("10e5events_10GeV_test_new_2608_new_lowerbins.root","RECREATE","105events_10GeV_test_new");
+  TFile *results = new TFile("test2409.root","RECREATE","105events_10GeV_test_new");
   
 
   for (Long64_t e_it = 0; e_it < nevt; ++e_it){
-     //std::cout<< "in event loop with entry----------------------------------- "<< e_it <<std::endl;
     tr->GetEntry(e_it);
-    
     //get only CCQE events 
     bool is_qe = ntpl->event->Summary()->ProcInfo().IsQuasiElastic();
     bool is_cc = ntpl->event->Summary()->ProcInfo().IsWeakCC();
     if ( !is_qe || !is_cc ) continue;
-
-
     
     //create a Weight calculator
     double weight_zexp_cv = myccqereweighter_zexp_cv.CalcWeight(*ntpl->event);
@@ -592,6 +786,21 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
     double weight_altogether_minus = myccqereweighter_altogether_minus.CalcWeight(*ntpl->event);
     double myccqereweighter_a_newbasis_plus = myccqereweighter_altogether_minus.CalcWeight(*ntpl->event);
     
+    double weight_myccqereweighter_rw_a1_a2 = myccqereweighter_a1_a2.CalcWeight(*ntpl->event);
+    double weight_myccqereweighter_rw_a2_a3 = myccqereweighter_a2_a3.CalcWeight(*ntpl->event);
+    double weight_myccqereweighter_rw_a1_a3 = myccqereweighter_a1_a3.CalcWeight(*ntpl->event);
+    double weight_myccqereweighter_rw_a1_a4 = myccqereweighter_a1_a4.CalcWeight(*ntpl->event);
+    double weight_myccqereweighter_rw_a2_a4 = myccqereweighter_a2_a4.CalcWeight(*ntpl->event);
+    double weight_myccqereweighter_rw_a3_a4 = myccqereweighter_a3_a4.CalcWeight(*ntpl->event);
+
+
+    double weight_myccqereweighter_rw_a1_a4_minus = myccqereweighter_a1_a4_minus.CalcWeight(*ntpl->event);
+    double weight_myccqereweighter_rw_a2_a4_minus = myccqereweighter_a2_a4_minus.CalcWeight(*ntpl->event);
+    double weight_myccqereweighter_rw_a1_a2_minus = myccqereweighter_a1_a2_minus.CalcWeight(*ntpl->event);
+    double weight_myccqereweighter_rw_a1_a3_minus = myccqereweighter_a1_a3_minus.CalcWeight(*ntpl->event);
+    double weight_myccqereweighter_rw_a2_a3_minus = myccqereweighter_a2_a3_minus.CalcWeight(*ntpl->event);
+    double weight_myccqereweighter_rw_a3_a4_minus = myccqereweighter_a3_a4_minus.CalcWeight(*ntpl->event);
+
     
     double weight_myccqereweighter_rw_b1 = myccqereweighter_rw_b1.CalcWeight(*ntpl->event);
     double weight_myccqereweighter_rw_b2 = myccqereweighter_rw_b2.CalcWeight(*ntpl->event);
@@ -637,16 +846,17 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
     double weight_myccqereweighter_rw_b1_b2_b3_b4_point1 = myccqereweighter_rw_b1_b2_b3_b4_point1.CalcWeight(*ntpl->event);
     double weight_myccqereweighter_rw_b1_b2_b3_b4_minus_point1 = myccqereweighter_rw_b1_b2_b3_b4_minus_point1.CalcWeight(*ntpl->event);
     
+    //a load of weight calculators
+    std::vector<double> throw_weights_aparams;
+  for (int i = 0; i < 2; ++i) {
+    throw_weights_aparams.push_back(1);
+  }
 
-    TLorentzVector muon_4momentum;
-   
+    TLorentzVector muon_4momentum; 
     TLorentzVector neutrino_4momentum;
     vector<double> proton_3_momentum_magnitude_entry;
     int proton_count = 0;
     
-    
-    //std::cout << "[INFO]: Got entry " << e_it << std::endl;
-
     // Check for GENIE Event
     if (!ntpl) {
       continue;
@@ -678,12 +888,8 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
         //std::cout << "  part[" << pitr++ << "]: pdg = " << p->Pdg()
           //   << ", status = " << p->Status() << std::endl;
 
-      //re weight the neutrino event
+      //re-weight the neutrino event
       //double weight = wcalc.NewWeight(p);
-
-          
-      
-      
       if((p->Pdg()==13) && (p->Status()==1)){
         // std::cout << "d energy of the muon is " << p->E() << std::endl;
         emuon->Fill(p->E());
@@ -726,12 +932,7 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
     //}
   //}
     std::cout << "---" << std::endl;
-    
-
-
-
-
-    
+  
       ///// Working out which of the final state protons has the greatest momentum (magnitude)
       auto const max_iter = std::max_element(proton_3_momentum_magnitude_entry.begin(), proton_3_momentum_magnitude_entry.end());
       if (max_iter == proton_3_momentum_magnitude_entry.end())
@@ -769,6 +970,20 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
       q2_hist_rw_a3_minus->Fill(s2,weight_a3_minus);
       q2_hist_rw_a4_minus->Fill(s2,weight_a4_minus);
       q2_hist_rw_altogether_minus->Fill(s2,weight_altogether_minus);
+
+
+      q2_hist_myccqereweighter_rw_a1_a2->Fill(s2, weight_myccqereweighter_rw_a1_a2);
+      q2_hist_myccqereweighter_rw_a1_a3->Fill(s2, weight_myccqereweighter_rw_a1_a3);
+      q2_hist_myccqereweighter_rw_a2_a3->Fill(s2, weight_myccqereweighter_rw_a2_a3);
+      q2_hist_myccqereweighter_rw_a1_a4->Fill(s2, weight_myccqereweighter_rw_a1_a4);
+      q2_hist_myccqereweighter_rw_a2_a4->Fill(s2, weight_myccqereweighter_rw_a2_a4);
+      q2_hist_myccqereweighter_rw_a3_a4->Fill(s2, weight_myccqereweighter_rw_a3_a4);
+      q2_hist_myccqereweighter_rw_a1_a2_minus->Fill(s2, weight_myccqereweighter_rw_a1_a2_minus);
+      q2_hist_myccqereweighter_rw_a1_a3_minus->Fill(s2, weight_myccqereweighter_rw_a1_a3_minus);
+      q2_hist_myccqereweighter_rw_a2_a3_minus->Fill(s2, weight_myccqereweighter_rw_a2_a3_minus);
+      q2_hist_myccqereweighter_rw_a1_a4_minus->Fill(s2, weight_myccqereweighter_rw_a1_a4_minus);
+      q2_hist_myccqereweighter_rw_a2_a4_minus->Fill(s2, weight_myccqereweighter_rw_a2_a4_minus);
+      q2_hist_myccqereweighter_rw_a3_a4_minus->Fill(s2, weight_myccqereweighter_rw_a3_a4_minus);
 
       
       q2_hist_myccqereweighter_rw_b1->Fill(s2, weight_myccqereweighter_rw_b1);
@@ -820,7 +1035,12 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
         throw_weights[i] = rand_b_reweight_engines[i]->CalcWeight(*ntpl->event);
         myhists[i]->Fill(s2, throw_weights[i]);
       }
-
+      /*
+      for (int i = 0; i < 2; i++){
+        throw_weights_aparams[i] = list_of_reweighters[i].CalcWeight(*ntpl->event);
+        myhists_reweighting_aparams[i]->Fill(s2, throw_weights_aparams[i]);
+      }
+      */
     
     if (e_it > 100000) {
       break;
@@ -865,6 +1085,18 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
   q2_hist_rw_a4_minus->Write();
   q2_hist_rw_altogether_minus->Write();
 
+  q2_hist_myccqereweighter_rw_a1_a2->Write();
+  q2_hist_myccqereweighter_rw_a1_a3->Write();
+  q2_hist_myccqereweighter_rw_a2_a3->Write();
+  q2_hist_myccqereweighter_rw_a1_a4->Write();
+  q2_hist_myccqereweighter_rw_a2_a4->Write();
+  q2_hist_myccqereweighter_rw_a3_a4->Write();
+  q2_hist_myccqereweighter_rw_a1_a2_minus->Write();
+  q2_hist_myccqereweighter_rw_a1_a3_minus->Write();
+  q2_hist_myccqereweighter_rw_a2_a3_minus->Write();
+  q2_hist_myccqereweighter_rw_a1_a4_minus->Write();
+  q2_hist_myccqereweighter_rw_a2_a4_minus->Write();
+  q2_hist_myccqereweighter_rw_a3_a4_minus->Write();
   
   q2_hist_myccqereweighter_rw_b1->Write();
   q2_hist_myccqereweighter_rw_b2->Write();
@@ -914,9 +1146,14 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
   }
   //myhists.Write();
  
- 
+ for(int i=0 ; i < 2 ; ++i){
+    TString histname = Form("histogram_rewighterhrow_%d", i);
+    //myhists.at(i) = (TH1F*) GetOutputList()->FindObject(histname.Data());
+    myhists_reweighting_aparams[i]->Write();
 
-  TH1D *mystatshisto = new TH1D("mystatshisto", ";Q2;count", 25, 0, 7);
+  }
+
+  TH1D *mystatshisto = new TH1D("mystatshisto", ";Q2;count", 35, 0, 7);
 
   //now do stats on the throws
   for (int bin_i = 0; bin_i < myhists.front()->GetXaxis()->GetNbins(); ++bin_i) {
@@ -957,6 +1194,7 @@ TTree *tree_out = new TTree("mytree","mytreetitle");
   std::cout << "closed ROOT file" << std::endl;
   //#endif
 
+/*
 std::cout<<"random b values basis-------------------------------------------------"<<std::endl;
 for (int i = 0; i < randbval_vector.size(); i++)
     {
@@ -986,6 +1224,7 @@ for (int i = 0; i < avalues_for_genie_vector.size(); i++)
         }    
         cout << endl;
     }
+    */
 tree_out->Write();
 file_out->Write();
 file_out->Close();

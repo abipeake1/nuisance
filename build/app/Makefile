@@ -91,7 +91,7 @@ install/fast: preinstall/fast
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Devel\" \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -160,6 +160,20 @@ preinstall/fast:
 depend:
 	cd /root/software/nuisance/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+app/CMakeFiles/nusystematics_pca.dir/rule:
+	cd /root/software/nuisance/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/nusystematics_pca.dir/rule
+.PHONY : app/CMakeFiles/nusystematics_pca.dir/rule
+
+# Convenience name for target.
+nusystematics_pca: app/CMakeFiles/nusystematics_pca.dir/rule
+.PHONY : nusystematics_pca
+
+# fast build rule for target.
+nusystematics_pca/fast:
+	cd /root/software/nuisance/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/nusystematics_pca.dir/build.make app/CMakeFiles/nusystematics_pca.dir/build
+.PHONY : nusystematics_pca/fast
 
 # Convenience name for target.
 app/CMakeFiles/nuismin.dir/rule:
@@ -655,6 +669,30 @@ nuissyst.cxx.s:
 	cd /root/software/nuisance/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/nuissyst.dir/build.make app/CMakeFiles/nuissyst.dir/nuissyst.cxx.s
 .PHONY : nuissyst.cxx.s
 
+nusystematics_pca.o: nusystematics_pca.cxx.o
+.PHONY : nusystematics_pca.o
+
+# target to build an object file
+nusystematics_pca.cxx.o:
+	cd /root/software/nuisance/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/nusystematics_pca.dir/build.make app/CMakeFiles/nusystematics_pca.dir/nusystematics_pca.cxx.o
+.PHONY : nusystematics_pca.cxx.o
+
+nusystematics_pca.i: nusystematics_pca.cxx.i
+.PHONY : nusystematics_pca.i
+
+# target to preprocess a source file
+nusystematics_pca.cxx.i:
+	cd /root/software/nuisance/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/nusystematics_pca.dir/build.make app/CMakeFiles/nusystematics_pca.dir/nusystematics_pca.cxx.i
+.PHONY : nusystematics_pca.cxx.i
+
+nusystematics_pca.s: nusystematics_pca.cxx.s
+.PHONY : nusystematics_pca.s
+
+# target to generate assembly for a file
+nusystematics_pca.cxx.s:
+	cd /root/software/nuisance/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/nusystematics_pca.dir/build.make app/CMakeFiles/nusystematics_pca.dir/nusystematics_pca.cxx.s
+.PHONY : nusystematics_pca.cxx.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -680,6 +718,7 @@ help:
 	@echo "... nuisplot"
 	@echo "... nuissmear"
 	@echo "... nuissyst"
+	@echo "... nusystematics_pca"
 	@echo "... PrepareGENIE.o"
 	@echo "... PrepareGENIE.i"
 	@echo "... PrepareGENIE.s"
@@ -719,6 +758,9 @@ help:
 	@echo "... nuissyst.o"
 	@echo "... nuissyst.i"
 	@echo "... nuissyst.s"
+	@echo "... nusystematics_pca.o"
+	@echo "... nusystematics_pca.i"
+	@echo "... nusystematics_pca.s"
 .PHONY : help
 
 

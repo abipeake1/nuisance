@@ -1,0 +1,2 @@
+/usr/bin/ar qc libnusystematics_pca.a CMakeFiles/nusystematics_pca.dir/nusystematics_pca.cxx.o
+/usr/bin/ranlib libnusystematics_pca.a

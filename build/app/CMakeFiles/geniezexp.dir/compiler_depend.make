@@ -437,203 +437,203 @@ app/CMakeFiles/geniezexp.dir/geniezexp.cxx.o: ../app/geniezexp.cxx \
   /opt/root/v6-26-10/include/TH3.h \
   /opt/root/v6-26-10/include/TAtt3D.h \
   /opt/root/v6-26-10/include/THStack.h \
-  _deps/eigen3-src/Eigen/Dense \
-  _deps/eigen3-src/Eigen/Core \
-  _deps/eigen3-src/Eigen/src/Core/util/DisableStupidWarnings.h \
-  _deps/eigen3-src/Eigen/src/Core/util/Macros.h \
-  _deps/eigen3-src/Eigen/src/Core/util/ConfigureVectorization.h \
+  Linux/include/eigen3/Eigen/Dense \
+  Linux/include/eigen3/Eigen/Core \
+  Linux/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
+  Linux/include/eigen3/Eigen/src/Core/util/Macros.h \
+  Linux/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h \
   /usr/lib/gcc/aarch64-redhat-linux/11/include/arm_neon.h \
   /usr/lib/gcc/aarch64-redhat-linux/11/include/arm_fp16.h \
   /usr/lib/gcc/aarch64-redhat-linux/11/include/arm_bf16.h \
   /usr/include/c++/11/complex \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
-  _deps/eigen3-src/Eigen/src/Core/util/MKL_support.h \
-  _deps/eigen3-src/Eigen/src/Core/util/Constants.h \
-  _deps/eigen3-src/Eigen/src/Core/util/Meta.h \
-  _deps/eigen3-src/Eigen/src/Core/util/ForwardDeclarations.h \
-  _deps/eigen3-src/Eigen/src/Core/util/StaticAssert.h \
-  _deps/eigen3-src/Eigen/src/Core/util/XprHelper.h \
-  _deps/eigen3-src/Eigen/src/Core/util/Memory.h \
-  _deps/eigen3-src/Eigen/src/Core/util/IntegralConstant.h \
-  _deps/eigen3-src/Eigen/src/Core/util/SymbolicIndex.h \
-  _deps/eigen3-src/Eigen/src/Core/NumTraits.h \
-  _deps/eigen3-src/Eigen/src/Core/MathFunctions.h \
-  _deps/eigen3-src/Eigen/src/Core/GenericPacketMath.h \
-  _deps/eigen3-src/Eigen/src/Core/MathFunctionsImpl.h \
-  _deps/eigen3-src/Eigen/src/Core/arch/Default/ConjHelper.h \
-  _deps/eigen3-src/Eigen/src/Core/arch/Default/Half.h \
-  _deps/eigen3-src/Eigen/src/Core/arch/Default/BFloat16.h \
-  _deps/eigen3-src/Eigen/src/Core/arch/Default/TypeCasting.h \
-  _deps/eigen3-src/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h \
-  _deps/eigen3-src/Eigen/src/Core/arch/NEON/PacketMath.h \
-  _deps/eigen3-src/Eigen/src/Core/arch/NEON/TypeCasting.h \
-  _deps/eigen3-src/Eigen/src/Core/arch/NEON/MathFunctions.h \
-  _deps/eigen3-src/Eigen/src/Core/arch/NEON/Complex.h \
-  _deps/eigen3-src/Eigen/src/Core/arch/Default/Settings.h \
-  _deps/eigen3-src/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h \
-  _deps/eigen3-src/Eigen/src/Core/functors/TernaryFunctors.h \
-  _deps/eigen3-src/Eigen/src/Core/functors/BinaryFunctors.h \
-  _deps/eigen3-src/Eigen/src/Core/functors/UnaryFunctors.h \
-  _deps/eigen3-src/Eigen/src/Core/functors/NullaryFunctors.h \
-  _deps/eigen3-src/Eigen/src/Core/functors/StlFunctors.h \
-  _deps/eigen3-src/Eigen/src/Core/functors/AssignmentFunctors.h \
-  _deps/eigen3-src/Eigen/src/Core/util/IndexedViewHelper.h \
-  _deps/eigen3-src/Eigen/src/Core/util/ReshapedHelper.h \
-  _deps/eigen3-src/Eigen/src/Core/ArithmeticSequence.h \
-  _deps/eigen3-src/Eigen/src/Core/IO.h \
-  _deps/eigen3-src/Eigen/src/Core/DenseCoeffsBase.h \
-  _deps/eigen3-src/Eigen/src/Core/DenseBase.h \
-  _deps/eigen3-src/Eigen/src/plugins/CommonCwiseUnaryOps.h \
-  _deps/eigen3-src/Eigen/src/plugins/BlockMethods.h \
-  _deps/eigen3-src/Eigen/src/plugins/IndexedViewMethods.h \
-  _deps/eigen3-src/Eigen/src/plugins/IndexedViewMethods.h \
-  _deps/eigen3-src/Eigen/src/plugins/ReshapedMethods.h \
-  _deps/eigen3-src/Eigen/src/plugins/ReshapedMethods.h \
-  _deps/eigen3-src/Eigen/src/Core/MatrixBase.h \
-  _deps/eigen3-src/Eigen/src/plugins/CommonCwiseBinaryOps.h \
-  _deps/eigen3-src/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
-  _deps/eigen3-src/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
-  _deps/eigen3-src/Eigen/src/Core/EigenBase.h \
-  _deps/eigen3-src/Eigen/src/Core/Product.h \
-  _deps/eigen3-src/Eigen/src/Core/CoreEvaluators.h \
-  _deps/eigen3-src/Eigen/src/Core/AssignEvaluator.h \
-  _deps/eigen3-src/Eigen/src/Core/Assign.h \
-  _deps/eigen3-src/Eigen/src/Core/ArrayBase.h \
-  _deps/eigen3-src/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
-  _deps/eigen3-src/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
-  _deps/eigen3-src/Eigen/src/Core/util/BlasUtil.h \
-  _deps/eigen3-src/Eigen/src/Core/DenseStorage.h \
-  _deps/eigen3-src/Eigen/src/Core/NestByValue.h \
-  _deps/eigen3-src/Eigen/src/Core/ReturnByValue.h \
-  _deps/eigen3-src/Eigen/src/Core/NoAlias.h \
-  _deps/eigen3-src/Eigen/src/Core/PlainObjectBase.h \
-  _deps/eigen3-src/Eigen/src/Core/Matrix.h \
-  _deps/eigen3-src/Eigen/src/Core/Array.h \
-  _deps/eigen3-src/Eigen/src/Core/CwiseTernaryOp.h \
-  _deps/eigen3-src/Eigen/src/Core/CwiseBinaryOp.h \
-  _deps/eigen3-src/Eigen/src/Core/CwiseUnaryOp.h \
-  _deps/eigen3-src/Eigen/src/Core/CwiseNullaryOp.h \
-  _deps/eigen3-src/Eigen/src/Core/CwiseUnaryView.h \
-  _deps/eigen3-src/Eigen/src/Core/SelfCwiseBinaryOp.h \
-  _deps/eigen3-src/Eigen/src/Core/Dot.h \
-  _deps/eigen3-src/Eigen/src/Core/StableNorm.h \
-  _deps/eigen3-src/Eigen/src/Core/Stride.h \
-  _deps/eigen3-src/Eigen/src/Core/MapBase.h \
-  _deps/eigen3-src/Eigen/src/Core/Map.h \
-  _deps/eigen3-src/Eigen/src/Core/Ref.h \
-  _deps/eigen3-src/Eigen/src/Core/Block.h \
-  _deps/eigen3-src/Eigen/src/Core/VectorBlock.h \
-  _deps/eigen3-src/Eigen/src/Core/IndexedView.h \
-  _deps/eigen3-src/Eigen/src/Core/Reshaped.h \
-  _deps/eigen3-src/Eigen/src/Core/Transpose.h \
-  _deps/eigen3-src/Eigen/src/Core/DiagonalMatrix.h \
-  _deps/eigen3-src/Eigen/src/Core/Diagonal.h \
-  _deps/eigen3-src/Eigen/src/Core/DiagonalProduct.h \
-  _deps/eigen3-src/Eigen/src/Core/Redux.h \
-  _deps/eigen3-src/Eigen/src/Core/Visitor.h \
-  _deps/eigen3-src/Eigen/src/Core/Fuzzy.h \
-  _deps/eigen3-src/Eigen/src/Core/Swap.h \
-  _deps/eigen3-src/Eigen/src/Core/CommaInitializer.h \
-  _deps/eigen3-src/Eigen/src/Core/GeneralProduct.h \
-  _deps/eigen3-src/Eigen/src/Core/Solve.h \
-  _deps/eigen3-src/Eigen/src/Core/Inverse.h \
-  _deps/eigen3-src/Eigen/src/Core/SolverBase.h \
-  _deps/eigen3-src/Eigen/src/Core/PermutationMatrix.h \
-  _deps/eigen3-src/Eigen/src/Core/Transpositions.h \
-  _deps/eigen3-src/Eigen/src/Core/TriangularMatrix.h \
-  _deps/eigen3-src/Eigen/src/Core/SelfAdjointView.h \
-  _deps/eigen3-src/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
-  _deps/eigen3-src/Eigen/src/Core/products/Parallelizer.h \
-  _deps/eigen3-src/Eigen/src/Core/ProductEvaluators.h \
-  _deps/eigen3-src/Eigen/src/Core/products/GeneralMatrixVector.h \
-  _deps/eigen3-src/Eigen/src/Core/products/GeneralMatrixMatrix.h \
-  _deps/eigen3-src/Eigen/src/Core/SolveTriangular.h \
-  _deps/eigen3-src/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
-  _deps/eigen3-src/Eigen/src/Core/products/SelfadjointMatrixVector.h \
-  _deps/eigen3-src/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
-  _deps/eigen3-src/Eigen/src/Core/products/SelfadjointProduct.h \
-  _deps/eigen3-src/Eigen/src/Core/products/SelfadjointRank2Update.h \
-  _deps/eigen3-src/Eigen/src/Core/products/TriangularMatrixVector.h \
-  _deps/eigen3-src/Eigen/src/Core/products/TriangularMatrixMatrix.h \
-  _deps/eigen3-src/Eigen/src/Core/products/TriangularSolverMatrix.h \
-  _deps/eigen3-src/Eigen/src/Core/products/TriangularSolverVector.h \
-  _deps/eigen3-src/Eigen/src/Core/BandMatrix.h \
-  _deps/eigen3-src/Eigen/src/Core/CoreIterators.h \
-  _deps/eigen3-src/Eigen/src/Core/ConditionEstimator.h \
-  _deps/eigen3-src/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h \
-  _deps/eigen3-src/Eigen/src/Core/BooleanRedux.h \
-  _deps/eigen3-src/Eigen/src/Core/Select.h \
-  _deps/eigen3-src/Eigen/src/Core/VectorwiseOp.h \
-  _deps/eigen3-src/Eigen/src/Core/PartialReduxEvaluator.h \
-  _deps/eigen3-src/Eigen/src/Core/Random.h \
-  _deps/eigen3-src/Eigen/src/Core/Replicate.h \
-  _deps/eigen3-src/Eigen/src/Core/Reverse.h \
-  _deps/eigen3-src/Eigen/src/Core/ArrayWrapper.h \
-  _deps/eigen3-src/Eigen/src/Core/StlIterators.h \
-  _deps/eigen3-src/Eigen/src/Core/GlobalFunctions.h \
-  _deps/eigen3-src/Eigen/src/Core/util/ReenableStupidWarnings.h \
-  _deps/eigen3-src/Eigen/LU \
-  _deps/eigen3-src/Eigen/src/misc/Kernel.h \
-  _deps/eigen3-src/Eigen/src/misc/Image.h \
-  _deps/eigen3-src/Eigen/src/LU/FullPivLU.h \
-  _deps/eigen3-src/Eigen/src/LU/PartialPivLU.h \
-  _deps/eigen3-src/Eigen/src/LU/Determinant.h \
-  _deps/eigen3-src/Eigen/src/LU/InverseImpl.h \
-  _deps/eigen3-src/Eigen/src/LU/arch/InverseSize4.h \
-  _deps/eigen3-src/Eigen/Cholesky \
-  _deps/eigen3-src/Eigen/Jacobi \
-  _deps/eigen3-src/Eigen/src/Jacobi/Jacobi.h \
-  _deps/eigen3-src/Eigen/src/Cholesky/LLT.h \
-  _deps/eigen3-src/Eigen/src/Cholesky/LDLT.h \
-  _deps/eigen3-src/Eigen/QR \
-  _deps/eigen3-src/Eigen/Householder \
-  _deps/eigen3-src/Eigen/src/Householder/Householder.h \
-  _deps/eigen3-src/Eigen/src/Householder/HouseholderSequence.h \
-  _deps/eigen3-src/Eigen/src/Householder/BlockHouseholder.h \
-  _deps/eigen3-src/Eigen/src/QR/HouseholderQR.h \
-  _deps/eigen3-src/Eigen/src/QR/FullPivHouseholderQR.h \
-  _deps/eigen3-src/Eigen/src/QR/ColPivHouseholderQR.h \
-  _deps/eigen3-src/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
-  _deps/eigen3-src/Eigen/SVD \
-  _deps/eigen3-src/Eigen/src/misc/RealSvd2x2.h \
-  _deps/eigen3-src/Eigen/src/SVD/UpperBidiagonalization.h \
-  _deps/eigen3-src/Eigen/src/SVD/SVDBase.h \
-  _deps/eigen3-src/Eigen/src/SVD/JacobiSVD.h \
-  _deps/eigen3-src/Eigen/src/SVD/BDCSVD.h \
-  _deps/eigen3-src/Eigen/Geometry \
-  _deps/eigen3-src/Eigen/src/Geometry/OrthoMethods.h \
-  _deps/eigen3-src/Eigen/src/Geometry/EulerAngles.h \
-  _deps/eigen3-src/Eigen/src/Geometry/Homogeneous.h \
-  _deps/eigen3-src/Eigen/src/Geometry/RotationBase.h \
-  _deps/eigen3-src/Eigen/src/Geometry/Rotation2D.h \
-  _deps/eigen3-src/Eigen/src/Geometry/Quaternion.h \
-  _deps/eigen3-src/Eigen/src/Geometry/AngleAxis.h \
-  _deps/eigen3-src/Eigen/src/Geometry/Transform.h \
-  _deps/eigen3-src/Eigen/src/Geometry/Translation.h \
-  _deps/eigen3-src/Eigen/src/Geometry/Scaling.h \
-  _deps/eigen3-src/Eigen/src/Geometry/Hyperplane.h \
-  _deps/eigen3-src/Eigen/src/Geometry/ParametrizedLine.h \
-  _deps/eigen3-src/Eigen/src/Geometry/AlignedBox.h \
-  _deps/eigen3-src/Eigen/src/Geometry/Umeyama.h \
-  _deps/eigen3-src/Eigen/src/Geometry/arch/Geometry_SIMD.h \
-  _deps/eigen3-src/Eigen/Eigenvalues \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/Tridiagonalization.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/RealSchur.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/EigenSolver.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/RealSchur.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/Tridiagonalization.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/ComplexSchur.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/ComplexSchur.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/RealQZ.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/RealQZ.h \
-  _deps/eigen3-src/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+  Linux/include/eigen3/Eigen/src/Core/util/MKL_support.h \
+  Linux/include/eigen3/Eigen/src/Core/util/Constants.h \
+  Linux/include/eigen3/Eigen/src/Core/util/Meta.h \
+  Linux/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h \
+  Linux/include/eigen3/Eigen/src/Core/util/StaticAssert.h \
+  Linux/include/eigen3/Eigen/src/Core/util/XprHelper.h \
+  Linux/include/eigen3/Eigen/src/Core/util/Memory.h \
+  Linux/include/eigen3/Eigen/src/Core/util/IntegralConstant.h \
+  Linux/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h \
+  Linux/include/eigen3/Eigen/src/Core/NumTraits.h \
+  Linux/include/eigen3/Eigen/src/Core/MathFunctions.h \
+  Linux/include/eigen3/Eigen/src/Core/GenericPacketMath.h \
+  Linux/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h \
+  Linux/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h \
+  Linux/include/eigen3/Eigen/src/Core/arch/Default/Half.h \
+  Linux/include/eigen3/Eigen/src/Core/arch/Default/BFloat16.h \
+  Linux/include/eigen3/Eigen/src/Core/arch/Default/TypeCasting.h \
+  Linux/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h \
+  Linux/include/eigen3/Eigen/src/Core/arch/NEON/PacketMath.h \
+  Linux/include/eigen3/Eigen/src/Core/arch/NEON/TypeCasting.h \
+  Linux/include/eigen3/Eigen/src/Core/arch/NEON/MathFunctions.h \
+  Linux/include/eigen3/Eigen/src/Core/arch/NEON/Complex.h \
+  Linux/include/eigen3/Eigen/src/Core/arch/Default/Settings.h \
+  Linux/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h \
+  Linux/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h \
+  Linux/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h \
+  Linux/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h \
+  Linux/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h \
+  Linux/include/eigen3/Eigen/src/Core/functors/StlFunctors.h \
+  Linux/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h \
+  Linux/include/eigen3/Eigen/src/Core/util/IndexedViewHelper.h \
+  Linux/include/eigen3/Eigen/src/Core/util/ReshapedHelper.h \
+  Linux/include/eigen3/Eigen/src/Core/ArithmeticSequence.h \
+  Linux/include/eigen3/Eigen/src/Core/IO.h \
+  Linux/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h \
+  Linux/include/eigen3/Eigen/src/Core/DenseBase.h \
+  Linux/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+  Linux/include/eigen3/Eigen/src/plugins/BlockMethods.h \
+  Linux/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h \
+  Linux/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h \
+  Linux/include/eigen3/Eigen/src/plugins/ReshapedMethods.h \
+  Linux/include/eigen3/Eigen/src/plugins/ReshapedMethods.h \
+  Linux/include/eigen3/Eigen/src/Core/MatrixBase.h \
+  Linux/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+  Linux/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+  Linux/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+  Linux/include/eigen3/Eigen/src/Core/EigenBase.h \
+  Linux/include/eigen3/Eigen/src/Core/Product.h \
+  Linux/include/eigen3/Eigen/src/Core/CoreEvaluators.h \
+  Linux/include/eigen3/Eigen/src/Core/AssignEvaluator.h \
+  Linux/include/eigen3/Eigen/src/Core/Assign.h \
+  Linux/include/eigen3/Eigen/src/Core/ArrayBase.h \
+  Linux/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
+  Linux/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
+  Linux/include/eigen3/Eigen/src/Core/util/BlasUtil.h \
+  Linux/include/eigen3/Eigen/src/Core/DenseStorage.h \
+  Linux/include/eigen3/Eigen/src/Core/NestByValue.h \
+  Linux/include/eigen3/Eigen/src/Core/ReturnByValue.h \
+  Linux/include/eigen3/Eigen/src/Core/NoAlias.h \
+  Linux/include/eigen3/Eigen/src/Core/PlainObjectBase.h \
+  Linux/include/eigen3/Eigen/src/Core/Matrix.h \
+  Linux/include/eigen3/Eigen/src/Core/Array.h \
+  Linux/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h \
+  Linux/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h \
+  Linux/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h \
+  Linux/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h \
+  Linux/include/eigen3/Eigen/src/Core/CwiseUnaryView.h \
+  Linux/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h \
+  Linux/include/eigen3/Eigen/src/Core/Dot.h \
+  Linux/include/eigen3/Eigen/src/Core/StableNorm.h \
+  Linux/include/eigen3/Eigen/src/Core/Stride.h \
+  Linux/include/eigen3/Eigen/src/Core/MapBase.h \
+  Linux/include/eigen3/Eigen/src/Core/Map.h \
+  Linux/include/eigen3/Eigen/src/Core/Ref.h \
+  Linux/include/eigen3/Eigen/src/Core/Block.h \
+  Linux/include/eigen3/Eigen/src/Core/VectorBlock.h \
+  Linux/include/eigen3/Eigen/src/Core/IndexedView.h \
+  Linux/include/eigen3/Eigen/src/Core/Reshaped.h \
+  Linux/include/eigen3/Eigen/src/Core/Transpose.h \
+  Linux/include/eigen3/Eigen/src/Core/DiagonalMatrix.h \
+  Linux/include/eigen3/Eigen/src/Core/Diagonal.h \
+  Linux/include/eigen3/Eigen/src/Core/DiagonalProduct.h \
+  Linux/include/eigen3/Eigen/src/Core/Redux.h \
+  Linux/include/eigen3/Eigen/src/Core/Visitor.h \
+  Linux/include/eigen3/Eigen/src/Core/Fuzzy.h \
+  Linux/include/eigen3/Eigen/src/Core/Swap.h \
+  Linux/include/eigen3/Eigen/src/Core/CommaInitializer.h \
+  Linux/include/eigen3/Eigen/src/Core/GeneralProduct.h \
+  Linux/include/eigen3/Eigen/src/Core/Solve.h \
+  Linux/include/eigen3/Eigen/src/Core/Inverse.h \
+  Linux/include/eigen3/Eigen/src/Core/SolverBase.h \
+  Linux/include/eigen3/Eigen/src/Core/PermutationMatrix.h \
+  Linux/include/eigen3/Eigen/src/Core/Transpositions.h \
+  Linux/include/eigen3/Eigen/src/Core/TriangularMatrix.h \
+  Linux/include/eigen3/Eigen/src/Core/SelfAdjointView.h \
+  Linux/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
+  Linux/include/eigen3/Eigen/src/Core/products/Parallelizer.h \
+  Linux/include/eigen3/Eigen/src/Core/ProductEvaluators.h \
+  Linux/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h \
+  Linux/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h \
+  Linux/include/eigen3/Eigen/src/Core/SolveTriangular.h \
+  Linux/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
+  Linux/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h \
+  Linux/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
+  Linux/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h \
+  Linux/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h \
+  Linux/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h \
+  Linux/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h \
+  Linux/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h \
+  Linux/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h \
+  Linux/include/eigen3/Eigen/src/Core/BandMatrix.h \
+  Linux/include/eigen3/Eigen/src/Core/CoreIterators.h \
+  Linux/include/eigen3/Eigen/src/Core/ConditionEstimator.h \
+  Linux/include/eigen3/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h \
+  Linux/include/eigen3/Eigen/src/Core/BooleanRedux.h \
+  Linux/include/eigen3/Eigen/src/Core/Select.h \
+  Linux/include/eigen3/Eigen/src/Core/VectorwiseOp.h \
+  Linux/include/eigen3/Eigen/src/Core/PartialReduxEvaluator.h \
+  Linux/include/eigen3/Eigen/src/Core/Random.h \
+  Linux/include/eigen3/Eigen/src/Core/Replicate.h \
+  Linux/include/eigen3/Eigen/src/Core/Reverse.h \
+  Linux/include/eigen3/Eigen/src/Core/ArrayWrapper.h \
+  Linux/include/eigen3/Eigen/src/Core/StlIterators.h \
+  Linux/include/eigen3/Eigen/src/Core/GlobalFunctions.h \
+  Linux/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
+  Linux/include/eigen3/Eigen/LU \
+  Linux/include/eigen3/Eigen/src/misc/Kernel.h \
+  Linux/include/eigen3/Eigen/src/misc/Image.h \
+  Linux/include/eigen3/Eigen/src/LU/FullPivLU.h \
+  Linux/include/eigen3/Eigen/src/LU/PartialPivLU.h \
+  Linux/include/eigen3/Eigen/src/LU/Determinant.h \
+  Linux/include/eigen3/Eigen/src/LU/InverseImpl.h \
+  Linux/include/eigen3/Eigen/src/LU/arch/InverseSize4.h \
+  Linux/include/eigen3/Eigen/Cholesky \
+  Linux/include/eigen3/Eigen/Jacobi \
+  Linux/include/eigen3/Eigen/src/Jacobi/Jacobi.h \
+  Linux/include/eigen3/Eigen/src/Cholesky/LLT.h \
+  Linux/include/eigen3/Eigen/src/Cholesky/LDLT.h \
+  Linux/include/eigen3/Eigen/QR \
+  Linux/include/eigen3/Eigen/Householder \
+  Linux/include/eigen3/Eigen/src/Householder/Householder.h \
+  Linux/include/eigen3/Eigen/src/Householder/HouseholderSequence.h \
+  Linux/include/eigen3/Eigen/src/Householder/BlockHouseholder.h \
+  Linux/include/eigen3/Eigen/src/QR/HouseholderQR.h \
+  Linux/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h \
+  Linux/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h \
+  Linux/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
+  Linux/include/eigen3/Eigen/SVD \
+  Linux/include/eigen3/Eigen/src/misc/RealSvd2x2.h \
+  Linux/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h \
+  Linux/include/eigen3/Eigen/src/SVD/SVDBase.h \
+  Linux/include/eigen3/Eigen/src/SVD/JacobiSVD.h \
+  Linux/include/eigen3/Eigen/src/SVD/BDCSVD.h \
+  Linux/include/eigen3/Eigen/Geometry \
+  Linux/include/eigen3/Eigen/src/Geometry/OrthoMethods.h \
+  Linux/include/eigen3/Eigen/src/Geometry/EulerAngles.h \
+  Linux/include/eigen3/Eigen/src/Geometry/Homogeneous.h \
+  Linux/include/eigen3/Eigen/src/Geometry/RotationBase.h \
+  Linux/include/eigen3/Eigen/src/Geometry/Rotation2D.h \
+  Linux/include/eigen3/Eigen/src/Geometry/Quaternion.h \
+  Linux/include/eigen3/Eigen/src/Geometry/AngleAxis.h \
+  Linux/include/eigen3/Eigen/src/Geometry/Transform.h \
+  Linux/include/eigen3/Eigen/src/Geometry/Translation.h \
+  Linux/include/eigen3/Eigen/src/Geometry/Scaling.h \
+  Linux/include/eigen3/Eigen/src/Geometry/Hyperplane.h \
+  Linux/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h \
+  Linux/include/eigen3/Eigen/src/Geometry/AlignedBox.h \
+  Linux/include/eigen3/Eigen/src/Geometry/Umeyama.h \
+  Linux/include/eigen3/Eigen/src/Geometry/arch/Geometry_SIMD.h \
+  Linux/include/eigen3/Eigen/Eigenvalues \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+  Linux/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
   /opt/root/v6-26-10/include/TRandom3.h \
   /opt/root/v6-26-10/include/TRandom.h \
   /opt/root/v6-26-10/include/Math/TRandomEngine.h \
@@ -673,13 +673,9 @@ app/CMakeFiles/geniezexp.dir/geniezexp.cxx.o: ../app/geniezexp.cxx \
 
 /opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightNuXSecDIS.h:
 
-/opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightNuXSecNCRES.h:
-
 /opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightINukeParams.h:
 
 /opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightINuke.h:
-
-/opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightFGM.h:
 
 /opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightNonResonanceBkg.h:
 
@@ -697,11 +693,7 @@ app/CMakeFiles/geniezexp.dir/geniezexp.cxx.o: ../app/geniezexp.cxx \
 
 /opt/genie/3_02_02/include/GENIE/RwFramework/GSystSet.h:
 
-/opt/genie/3_02_02/include/GENIE/RwFramework/GReWeightI.h:
-
 /opt/genie/3_02_02/include/GENIE/Framework/Utils/AppInit.h:
-
-/opt/genie/3_02_02/include/GENIE/Framework/Utils/RunOpt.h:
 
 /usr/include/c++/11/bits/fstream.tcc:
 
@@ -709,107 +701,127 @@ app/CMakeFiles/geniezexp.dir/geniezexp.cxx.o: ../app/geniezexp.cxx \
 
 /usr/include/c++/11/aarch64-redhat-linux/bits/basic_file.h:
 
+/usr/include/c++/11/bits/codecvt.h:
+
 /usr/include/c++/11/fstream:
 
 /opt/root/v6-26-10/include/Math/TRandomEngine.h:
 
 /opt/root/v6-26-10/include/TRandom.h:
 
-_deps/eigen3-src/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h:
+Linux/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h:
 
-_deps/eigen3-src/Eigen/src/Eigenvalues/ComplexEigenSolver.h:
+Linux/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h:
 
-_deps/eigen3-src/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h:
+Linux/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h:
 
-_deps/eigen3-src/Eigen/src/Eigenvalues/EigenSolver.h:
+Linux/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h:
 
-_deps/eigen3-src/Eigen/src/Eigenvalues/HessenbergDecomposition.h:
+Linux/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h:
 
-_deps/eigen3-src/Eigen/src/Eigenvalues/RealSchur.h:
+Linux/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h:
 
-_deps/eigen3-src/Eigen/Eigenvalues:
+Linux/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h:
 
-_deps/eigen3-src/Eigen/src/Geometry/Umeyama.h:
+Linux/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h:
 
-_deps/eigen3-src/Eigen/src/Geometry/AlignedBox.h:
+Linux/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h:
 
-_deps/eigen3-src/Eigen/src/Geometry/ParametrizedLine.h:
+Linux/include/eigen3/Eigen/Eigenvalues:
 
-_deps/eigen3-src/Eigen/src/Geometry/Translation.h:
+Linux/include/eigen3/Eigen/src/Geometry/arch/Geometry_SIMD.h:
 
-_deps/eigen3-src/Eigen/src/Geometry/AngleAxis.h:
+Linux/include/eigen3/Eigen/src/Geometry/Umeyama.h:
 
-_deps/eigen3-src/Eigen/src/Geometry/Rotation2D.h:
+Linux/include/eigen3/Eigen/src/Geometry/Scaling.h:
 
-/opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightNuXSecCCQEvec.h:
+Linux/include/eigen3/Eigen/src/Geometry/AngleAxis.h:
 
-_deps/eigen3-src/Eigen/src/Geometry/RotationBase.h:
+/opt/genie/3_02_02/include/GENIE/Framework/Utils/RunOpt.h:
 
-_deps/eigen3-src/Eigen/src/Geometry/Homogeneous.h:
+Linux/include/eigen3/Eigen/src/Geometry/Quaternion.h:
 
-_deps/eigen3-src/Eigen/src/Geometry/EulerAngles.h:
+Linux/include/eigen3/Eigen/src/Geometry/RotationBase.h:
 
-_deps/eigen3-src/Eigen/src/Geometry/Scaling.h:
+/opt/genie/3_02_02/include/GENIE/RwFramework/GReWeightI.h:
 
-_deps/eigen3-src/Eigen/Geometry:
+Linux/include/eigen3/Eigen/src/Geometry/Homogeneous.h:
 
-_deps/eigen3-src/Eigen/src/SVD/UpperBidiagonalization.h:
+Linux/include/eigen3/Eigen/src/Geometry/EulerAngles.h:
 
-_deps/eigen3-src/Eigen/src/QR/ColPivHouseholderQR.h:
+Linux/include/eigen3/Eigen/src/Geometry/OrthoMethods.h:
 
-_deps/eigen3-src/Eigen/src/QR/HouseholderQR.h:
+Linux/include/eigen3/Eigen/Geometry:
 
-_deps/eigen3-src/Eigen/src/Householder/BlockHouseholder.h:
+Linux/include/eigen3/Eigen/src/SVD/JacobiSVD.h:
 
-_deps/eigen3-src/Eigen/src/Householder/Householder.h:
+Linux/include/eigen3/Eigen/src/SVD/SVDBase.h:
 
-_deps/eigen3-src/Eigen/Householder:
+Linux/include/eigen3/Eigen/SVD:
 
-_deps/eigen3-src/Eigen/QR:
+Linux/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h:
 
-_deps/eigen3-src/Eigen/src/Jacobi/Jacobi.h:
+Linux/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h:
 
-_deps/eigen3-src/Eigen/Jacobi:
+Linux/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h:
 
-_deps/eigen3-src/Eigen/Cholesky:
+Linux/include/eigen3/Eigen/src/QR/HouseholderQR.h:
 
-_deps/eigen3-src/Eigen/src/LU/arch/InverseSize4.h:
+Linux/include/eigen3/Eigen/Householder:
 
-_deps/eigen3-src/Eigen/src/LU/FullPivLU.h:
+Linux/include/eigen3/Eigen/src/Cholesky/LDLT.h:
 
-_deps/eigen3-src/Eigen/src/misc/Kernel.h:
+Linux/include/eigen3/Eigen/src/Jacobi/Jacobi.h:
 
-_deps/eigen3-src/Eigen/LU:
+Linux/include/eigen3/Eigen/Jacobi:
 
-_deps/eigen3-src/Eigen/src/Core/util/ReenableStupidWarnings.h:
+Linux/include/eigen3/Eigen/Cholesky:
 
-_deps/eigen3-src/Eigen/src/Core/GlobalFunctions.h:
+/opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightFGM.h:
 
-_deps/eigen3-src/Eigen/src/Core/StlIterators.h:
+Linux/include/eigen3/Eigen/src/LU/InverseImpl.h:
 
-_deps/eigen3-src/Eigen/src/Core/Replicate.h:
+Linux/include/eigen3/Eigen/src/LU/Determinant.h:
 
-_deps/eigen3-src/Eigen/src/Core/PartialReduxEvaluator.h:
+Linux/include/eigen3/Eigen/src/misc/Kernel.h:
 
-_deps/eigen3-src/Eigen/src/Core/VectorwiseOp.h:
+Linux/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h:
 
-_deps/eigen3-src/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h:
+Linux/include/eigen3/Eigen/src/Core/GlobalFunctions.h:
 
-_deps/eigen3-src/Eigen/src/Core/ConditionEstimator.h:
+Linux/include/eigen3/Eigen/src/Core/StlIterators.h:
 
-_deps/eigen3-src/Eigen/src/Core/CoreIterators.h:
+Linux/include/eigen3/Eigen/src/Core/Replicate.h:
 
-_deps/eigen3-src/Eigen/src/Core/BandMatrix.h:
+Linux/include/eigen3/Eigen/src/Core/Random.h:
 
-_deps/eigen3-src/Eigen/src/Core/products/TriangularMatrixVector.h:
+Linux/include/eigen3/Eigen/src/Core/VectorwiseOp.h:
 
-_deps/eigen3-src/Eigen/src/Core/products/SelfadjointProduct.h:
+Linux/include/eigen3/Eigen/src/Core/Select.h:
 
-_deps/eigen3-src/Eigen/src/Core/products/SelfadjointMatrixMatrix.h:
+Linux/include/eigen3/Eigen/src/Core/ConditionEstimator.h:
 
-/usr/include/bits/fp-fast.h:
+Linux/include/eigen3/Eigen/src/Core/CoreIterators.h:
 
-_deps/eigen3-src/Eigen/src/Geometry/Quaternion.h:
+Linux/include/eigen3/Eigen/src/Core/BandMatrix.h:
+
+Linux/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h:
+
+Linux/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h:
+
+Linux/include/eigen3/Eigen/src/Core/PartialReduxEvaluator.h:
+
+Linux/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h:
+
+Linux/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h:
+
+Linux/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h:
+
+Linux/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h:
+
+Linux/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h:
+
+Linux/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h:
 
 /usr/include/wctype.h:
 
@@ -817,19 +829,19 @@ _deps/eigen3-src/Eigen/src/Geometry/Quaternion.h:
 
 /opt/root/v6-26-10/include/TBranchCacheInfo.h:
 
-_deps/eigen3-src/Eigen/src/Core/products/TriangularMatrixMatrix.h:
-
 /usr/include/c++/11/cstring:
 
 /opt/root/v6-26-10/include/TMathBase.h:
 
 /opt/root/v6-26-10/include/TMatrixTBase.h:
 
-/opt/root/v6-26-10/include/TMath.h:
-
 /opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightNuXSecNC.h:
 
 /usr/include/c++/11/bits/char_traits.h:
+
+Linux/include/eigen3/Eigen/src/Geometry/AlignedBox.h:
+
+/opt/root/v6-26-10/include/TVirtualIsAProxy.h:
 
 /opt/root/v6-26-10/include/TIsAProxy.h:
 
@@ -839,11 +851,17 @@ _deps/eigen3-src/Eigen/src/Core/products/TriangularMatrixMatrix.h:
 
 /usr/include/bits/unistd_ext.h:
 
+Linux/include/eigen3/Eigen/src/Core/BooleanRedux.h:
+
+Linux/include/eigen3/Eigen/src/Core/Block.h:
+
 /usr/include/bits/getopt_core.h:
 
 /usr/include/bits/getopt_posix.h:
 
 /usr/include/c++/11/aarch64-redhat-linux/bits/ctype_inline.h:
+
+Linux/include/eigen3/Eigen/src/Core/util/Meta.h:
 
 /usr/include/bits/types/struct_FILE.h:
 
@@ -861,33 +879,33 @@ _deps/eigen3-src/Eigen/src/Core/products/TriangularMatrixMatrix.h:
 
 /opt/root/v6-26-10/include/TStorage.h:
 
-/opt/root/v6-26-10/include/TArrayI.h:
-
 /opt/genie/3_02_02/include/GENIE/Framework/Interaction/ScatteringType.h:
 
 /opt/root/v6-26-10/include/strtok.h:
+
+Linux/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h:
 
 /opt/root/v6-26-10/include/DllImport.h:
 
 /opt/genie/3_02_02/include/GENIE/Framework/Interaction/Target.h:
 
-_deps/eigen3-src/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h:
-
 /opt/genie/3_02_02/include/GENIE/Framework/GHEP/GHepParticle.h:
 
-/usr/include/c++/11/bits/std_abs.h:
+/opt/root/v6-26-10/include/TArrayI.h:
 
-_deps/eigen3-src/Eigen/src/misc/Image.h:
+Linux/include/eigen3/Eigen/src/Core/TriangularMatrix.h:
 
 /opt/root/v6-26-10/include/TClass.h:
+
+Linux/include/eigen3/Eigen/src/Cholesky/LLT.h:
 
 /usr/include/c++/11/bits/stl_algo.h:
 
 /opt/root/v6-26-10/include/TGenericClassInfo.h:
 
-/usr/include/bits/confname.h:
+Linux/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h:
 
-_deps/eigen3-src/Eigen/src/LU/PartialPivLU.h:
+/usr/include/bits/confname.h:
 
 /opt/root/v6-26-10/include/strlcpy.h:
 
@@ -895,23 +913,29 @@ _deps/eigen3-src/Eigen/src/LU/PartialPivLU.h:
 
 /usr/include/stdint.h:
 
+/usr/include/c++/11/bits/node_handle.h:
+
+/usr/include/c++/11/iostream:
+
 /usr/include/c++/11/bits/hashtable_policy.h:
 
-_deps/eigen3-src/Eigen/src/Eigenvalues/ComplexSchur.h:
+/usr/include/c++/11/bits/hashtable.h:
 
 /opt/root/v6-26-10/include/ROOT/span.hxx:
 
 /usr/include/c++/11/bits/invoke.h:
 
-_deps/eigen3-src/Eigen/src/QR/CompleteOrthogonalDecomposition.h:
-
 /usr/include/c++/11/bits/uses_allocator.h:
 
 /usr/include/c++/11/bits/unique_lock.h:
 
+Linux/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h:
+
 /usr/include/strings.h:
 
 /usr/include/c++/11/bits/stl_bvector.h:
+
+Linux/include/eigen3/Eigen/src/Core/IO.h:
 
 /usr/include/c++/11/bits/stl_uninitialized.h:
 
@@ -919,43 +943,41 @@ _deps/eigen3-src/Eigen/src/QR/CompleteOrthogonalDecomposition.h:
 
 /opt/root/v6-26-10/include/ROOT/TIOFeatures.hxx:
 
-_deps/eigen3-src/Eigen/src/SVD/SVDBase.h:
-
 /usr/include/c++/11/istream:
 
 /usr/include/c++/11/bits/locale_facets.tcc:
 
-_deps/eigen3-src/Eigen/src/Core/Transpositions.h:
-
 /usr/include/c++/11/aarch64-redhat-linux/bits/ctype_base.h:
-
-_deps/eigen3-src/Eigen/src/Core/DenseBase.h:
-
-/usr/include/c++/11/cwctype:
 
 /usr/include/c++/11/bits/locale_facets.h:
 
-/usr/include/c++/11/bits/exception.h:
-
 /usr/include/c++/11/bits/basic_ios.h:
-
-_deps/eigen3-src/Eigen/src/Core/Select.h:
 
 /usr/include/c++/11/bits/uniform_int_dist.h:
 
 /usr/include/c++/11/pstl/execution_defs.h:
 
+Linux/include/eigen3/Eigen/src/Core/Assign.h:
+
 /usr/include/c++/11/aarch64-redhat-linux/bits/error_constants.h:
 
 /usr/include/c++/11/cstddef:
 
-_deps/eigen3-src/Eigen/src/Core/Random.h:
-
 /usr/include/bits/types/struct_timespec.h:
+
+Linux/include/eigen3/Eigen/src/Core/util/StaticAssert.h:
+
+/opt/root/v6-26-10/include/TCanvas.h:
 
 /opt/root/v6-26-10/include/TBox.h:
 
 /opt/root/v6-26-10/include/ROOT/RRangeCast.hxx:
+
+/opt/root/v6-26-10/include/TAttPad.h:
+
+/opt/root/v6-26-10/include/TMath.h:
+
+Linux/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:
 
 /usr/include/bits/fp-logb.h:
 
@@ -967,11 +989,11 @@ _deps/eigen3-src/Eigen/src/Core/Random.h:
 
 /opt/root/v6-26-10/include/TVirtualMutex.h:
 
+/usr/include/asm/errno.h:
+
 /usr/include/bits/stdint-uintn.h:
 
 /usr/include/linux/errno.h:
-
-/usr/include/c++/11/functional:
 
 /usr/include/c++/11/utility:
 
@@ -979,37 +1001,45 @@ _deps/eigen3-src/Eigen/src/Core/Random.h:
 
 /usr/include/bits/stdio.h:
 
+/usr/include/bits/types/__fpos64_t.h:
+
 /usr/include/stdio.h:
 
 /usr/include/c++/11/bits/postypes.h:
 
 /usr/include/c++/11/aarch64-redhat-linux/bits/c++allocator.h:
 
+Linux/include/eigen3/Eigen/src/Core/ProductEvaluators.h:
+
 /opt/root/v6-26-10/include/Rtypes.h:
 
 /opt/root/v6-26-10/include/TBits.h:
 
-_deps/eigen3-src/Eigen/src/plugins/ReshapedMethods.h:
-
 /usr/include/c++/11/bits/functional_hash.h:
+
+/usr/include/errno.h:
+
+/usr/include/c++/11/bits/alloc_traits.h:
+
+/usr/include/c++/11/bits/basic_string.h:
 
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
 /usr/include/linux/limits.h:
 
-/usr/include/c++/11/bits/range_access.h:
-
-_deps/eigen3-src/Eigen/src/Geometry/OrthoMethods.h:
+Linux/include/eigen3/Eigen/src/Core/AssignEvaluator.h:
 
 /usr/include/c++/11/bits/memoryfwd.h:
 
 /usr/include/c++/11/ext/alloc_traits.h:
 
-/opt/root/v6-26-10/include/TIterator.h:
+Linux/include/eigen3/Eigen/src/Core/MathFunctions.h:
 
 /usr/include/c++/11/bits/algorithmfwd.h:
 
 /usr/include/c++/11/bits/cxxabi_forced.h:
+
+Linux/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:
 
 /usr/include/c++/11/bits/ostream_insert.h:
 
@@ -1023,6 +1053,8 @@ _deps/eigen3-src/Eigen/src/Geometry/OrthoMethods.h:
 
 /usr/include/bits/struct_mutex.h:
 
+Linux/include/eigen3/Eigen/LU:
+
 /usr/include/c++/11/ext/type_traits.h:
 
 /usr/include/c++/11/bits/move.h:
@@ -1031,27 +1063,21 @@ _deps/eigen3-src/Eigen/src/Geometry/OrthoMethods.h:
 
 /usr/include/bits/thread-shared-types.h:
 
-_deps/eigen3-src/Eigen/src/SVD/JacobiSVD.h:
-
-_deps/eigen3-src/Eigen/src/Householder/HouseholderSequence.h:
-
 /usr/include/bits/types/struct_timeval.h:
-
-/usr/include/c++/11/bits/streambuf_iterator.h:
 
 /usr/include/bits/types/__FILE.h:
 
 /usr/include/features.h:
 
-_deps/eigen3-src/Eigen/src/Core/util/MKL_support.h:
-
 /usr/include/c++/11/streambuf:
 
-/opt/root/v6-26-10/include/RtypesCore.h:
-
-/usr/include/c++/11/bits/functexcept.h:
-
 /opt/root/v6-26-10/include/ROOT/EExecutionPolicy.hxx:
+
+Linux/include/eigen3/Eigen/src/plugins/BlockMethods.h:
+
+/opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightNuXSecNCRES.h:
+
+Linux/include/eigen3/Eigen/src/Core/arch/Default/BFloat16.h:
 
 /usr/include/bits/stdlib-bsearch.h:
 
@@ -1063,31 +1089,23 @@ _deps/eigen3-src/Eigen/src/Core/util/MKL_support.h:
 
 /usr/include/c++/11/bits/basic_ios.tcc:
 
-/usr/include/c++/11/bits/enable_special_members.h:
-
-_deps/eigen3-src/Eigen/src/Core/products/TriangularSolverMatrix.h:
-
-/opt/root/v6-26-10/include/TAttPad.h:
-
-_deps/eigen3-src/Eigen/src/Core/util/BlasUtil.h:
-
-/usr/include/bits/types/sigset_t.h:
-
 /usr/include/sys/select.h:
 
 /usr/include/c++/11/ext/concurrence.h:
 
 /usr/include/c++/11/bit:
 
+Linux/include/eigen3/Eigen/src/LU/PartialPivLU.h:
+
 /usr/include/bits/errno.h:
 
 /usr/include/c++/11/aarch64-redhat-linux/bits/c++locale.h:
 
-_deps/eigen3-src/Eigen/src/Core/PlainObjectBase.h:
-
-_deps/eigen3-src/Eigen/src/Core/ProductEvaluators.h:
-
 /usr/include/c++/11/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/11/bits/streambuf_iterator.h:
+
+Linux/include/eigen3/Eigen/src/Core/arch/NEON/PacketMath.h:
 
 /usr/include/c++/11/cstdlib:
 
@@ -1095,11 +1113,13 @@ _deps/eigen3-src/Eigen/src/Core/ProductEvaluators.h:
 
 /usr/include/bits/types/struct___jmp_buf_tag.h:
 
+Linux/include/eigen3/Eigen/src/Geometry/Translation.h:
+
 /usr/include/c++/11/bits/locale_classes.tcc:
 
 /usr/include/c++/11/ext/aligned_buffer.h:
 
-/opt/root/v6-26-10/include/TLegend.h:
+Linux/include/eigen3/Eigen/src/misc/RealSvd2x2.h:
 
 /usr/include/c++/11/string:
 
@@ -1121,6 +1141,10 @@ _deps/eigen3-src/Eigen/src/Core/ProductEvaluators.h:
 
 /usr/include/c++/11/pstl/pstl_config.h:
 
+Linux/include/eigen3/Eigen/src/Core/Array.h:
+
+Linux/include/eigen3/Eigen/src/Core/CommaInitializer.h:
+
 /usr/include/bits/wordsize.h:
 
 /opt/root/v6-26-10/include/snprintf.h:
@@ -1135,13 +1159,15 @@ _deps/eigen3-src/Eigen/src/Core/ProductEvaluators.h:
 
 /usr/include/bits/cpu-set.h:
 
-/usr/include/bits/endianness.h:
+Linux/include/eigen3/Eigen/src/Core/functors/StlFunctors.h:
 
 /usr/include/c++/11/bits/atomic_base.h:
 
 /usr/include/bits/environments.h:
 
 /usr/include/c++/11/ext/numeric_traits.h:
+
+/usr/include/c++/11/cstdint:
 
 /usr/include/stdlib.h:
 
@@ -1157,9 +1183,7 @@ _deps/eigen3-src/Eigen/src/Core/ProductEvaluators.h:
 
 /usr/include/c++/11/aarch64-redhat-linux/bits/gthr-default.h:
 
-/usr/include/bits/types/locale_t.h:
-
-_deps/eigen3-src/Eigen/src/Core/Dot.h:
+/usr/include/c++/11/bits/predefined_ops.h:
 
 /opt/root/v6-26-10/include/TAttText.h:
 
@@ -1171,7 +1195,9 @@ _deps/eigen3-src/Eigen/src/Core/Dot.h:
 
 /usr/include/sys/cdefs.h:
 
-_deps/eigen3-src/Eigen/SVD:
+/usr/include/c++/11/bits/stl_numeric.h:
+
+/usr/include/linux/close_range.h:
 
 /usr/include/c++/11/debug/assertions.h:
 
@@ -1179,13 +1205,13 @@ _deps/eigen3-src/Eigen/SVD:
 
 /usr/include/features-time64.h:
 
+Linux/include/eigen3/Eigen/src/Geometry/Transform.h:
+
 /usr/include/c++/11/debug/debug.h:
 
 /usr/include/gnu/stubs-lp64.h:
 
 /usr/include/ctype.h:
-
-_deps/eigen3-src/Eigen/src/Core/DiagonalProduct.h:
 
 /usr/include/bits/stdlib-float.h:
 
@@ -1195,15 +1221,7 @@ _deps/eigen3-src/Eigen/src/Core/DiagonalProduct.h:
 
 /usr/include/c++/11/aarch64-redhat-linux/bits/cpu_defines.h:
 
-/usr/include/c++/11/bits/refwrap.h:
-
 /usr/include/bits/libc-header-start.h:
-
-_deps/eigen3-src/Eigen/src/Core/Reshaped.h:
-
-_deps/eigen3-src/Eigen/src/Eigenvalues/Tridiagonalization.h:
-
-_deps/eigen3-src/Eigen/src/Core/ArrayWrapper.h:
 
 /usr/include/bits/types/__locale_t.h:
 
@@ -1215,15 +1233,11 @@ _deps/eigen3-src/Eigen/src/Core/ArrayWrapper.h:
 
 /usr/include/bits/types/struct_sched_param.h:
 
-/usr/include/c++/11/iostream:
-
-_deps/eigen3-src/Eigen/src/Core/util/Memory.h:
-
-_deps/eigen3-src/Eigen/src/Core/VectorBlock.h:
-
 /usr/include/bits/floatn.h:
 
 /usr/include/c++/11/cerrno:
+
+Linux/include/eigen3/Eigen/src/Core/Dot.h:
 
 /usr/lib/gcc/aarch64-redhat-linux/11/include/stdint.h:
 
@@ -1233,9 +1247,15 @@ _deps/eigen3-src/Eigen/src/Core/VectorBlock.h:
 
 /usr/include/bits/floatn-common.h:
 
+Linux/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h:
+
 /usr/include/bits/stdint-intn.h:
 
 /usr/include/bits/wctype-wchar.h:
+
+Linux/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h:
+
+/usr/include/sys/types.h:
 
 /usr/include/bits/sched.h:
 
@@ -1243,9 +1263,9 @@ _deps/eigen3-src/Eigen/src/Core/VectorBlock.h:
 
 /usr/include/bits/types/struct_itimerspec.h:
 
-/usr/include/c++/11/bits/stringfwd.h:
+Linux/include/eigen3/Eigen/src/Core/Matrix.h:
 
-/usr/include/c++/11/cwchar:
+/usr/include/c++/11/bits/stringfwd.h:
 
 /opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightAGKY.h:
 
@@ -1255,27 +1275,25 @@ _deps/eigen3-src/Eigen/src/Core/VectorBlock.h:
 
 /usr/include/c++/11/bits/nested_exception.h:
 
+/usr/include/bits/types/struct_tm.h:
+
 /usr/include/c++/11/bits/localefwd.h:
+
+Linux/include/eigen3/Eigen/src/Core/util/XprHelper.h:
+
+Linux/include/eigen3/Eigen/src/Core/util/Constants.h:
 
 /usr/include/bits/types/wint_t.h:
 
 /usr/include/c++/11/bits/shared_ptr.h:
 
-_deps/eigen3-src/Eigen/src/LU/Determinant.h:
-
-_deps/eigen3-src/Eigen/src/Core/Visitor.h:
-
 /usr/include/locale.h:
+
+Linux/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h:
 
 /usr/include/bits/types/mbstate_t.h:
 
-/opt/root/v6-26-10/include/TParticlePDG.h:
-
 /usr/include/bits/flt-eval-method.h:
-
-/usr/include/c++/11/bits/locale_classes.h:
-
-/usr/include/bits/types/FILE.h:
 
 /usr/include/c++/11/exception:
 
@@ -1283,9 +1301,7 @@ _deps/eigen3-src/Eigen/src/Core/Visitor.h:
 
 /usr/include/c++/11/pstl/glue_numeric_defs.h:
 
-/usr/include/bits/long-double.h:
-
-/opt/root/v6-26-10/include/ROOT/RStringView.hxx:
+Linux/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h:
 
 /usr/include/math.h:
 
@@ -1295,13 +1311,19 @@ _deps/eigen3-src/Eigen/src/Core/Visitor.h:
 
 /opt/root/v6-26-10/include/TDictionary.h:
 
+/opt/root/v6-26-10/include/RConfigure.h:
+
 /usr/include/wchar.h:
+
+/opt/root/v6-26-10/include/TDirectoryFile.h:
 
 /usr/include/bits/posix1_lim.h:
 
 /usr/include/c++/11/bits/cxxabi_init_exception.h:
 
-_deps/eigen3-src/Eigen/src/Geometry/Transform.h:
+Linux/include/eigen3/Eigen/src/Geometry/Rotation2D.h:
+
+Linux/include/eigen3/Eigen/src/Core/arch/Default/Half.h:
 
 /usr/include/c++/11/bits/string_view.tcc:
 
@@ -1311,7 +1333,11 @@ _deps/eigen3-src/Eigen/src/Geometry/Transform.h:
 
 /usr/include/c++/11/array:
 
+Linux/include/eigen3/Eigen/src/Core/Visitor.h:
+
 /usr/include/c++/11/aarch64-redhat-linux/bits/gthr.h:
+
+Linux/include/eigen3/Eigen/src/misc/Image.h:
 
 /usr/include/c++/11/tuple:
 
@@ -1323,6 +1349,10 @@ _deps/eigen3-src/Eigen/src/Geometry/Transform.h:
 
 /usr/include/asm-generic/errno-base.h:
 
+/usr/include/c++/11/functional:
+
+Linux/include/eigen3/Eigen/src/Core/StableNorm.h:
+
 /usr/lib/gcc/aarch64-redhat-linux/11/include/arm_neon.h:
 
 /usr/include/c++/11/bits/stl_pair.h:
@@ -1333,6 +1363,10 @@ _deps/eigen3-src/Eigen/src/Geometry/Transform.h:
 
 /opt/genie/3_02_02/include/GENIE/Framework/GHEP/GHepRecord.h:
 
+/usr/include/c++/11/bits/range_access.h:
+
+Linux/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h:
+
 /usr/include/c++/11/bits/streambuf.tcc:
 
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
@@ -1341,23 +1375,19 @@ _deps/eigen3-src/Eigen/src/Geometry/Transform.h:
 
 /usr/include/c++/11/bits/cpp_type_traits.h:
 
-_deps/eigen3-src/Eigen/src/Core/arch/NEON/PacketMath.h:
-
-_deps/eigen3-src/Eigen/src/QR/FullPivHouseholderQR.h:
-
-_deps/eigen3-src/Eigen/src/Core/functors/BinaryFunctors.h:
-
-_deps/eigen3-src/Eigen/src/Core/CwiseUnaryView.h:
-
 /usr/include/bits/waitflags.h:
 
 /usr/include/c++/11/new:
+
+/usr/include/c++/11/climits:
 
 /usr/include/c++/11/bits/sstream.tcc:
 
 /usr/include/c++/11/bits/stl_iterator.h:
 
 /usr/include/c++/11/bits/ostream.tcc:
+
+/usr/include/c++/11/clocale:
 
 /usr/include/c++/11/tr1/ell_integral.tcc:
 
@@ -1369,7 +1399,7 @@ _deps/eigen3-src/Eigen/src/Core/CwiseUnaryView.h:
 
 /usr/include/c++/11/bits/stl_raw_storage_iter.h:
 
-_deps/eigen3-src/Eigen/src/Core/functors/TernaryFunctors.h:
+Linux/include/eigen3/Eigen/src/Core/util/BlasUtil.h:
 
 /opt/root/v6-26-10/include/TFile.h:
 
@@ -1385,11 +1415,7 @@ _deps/eigen3-src/Eigen/src/Core/functors/TernaryFunctors.h:
 
 /usr/include/c++/11/bits/ios_base.h:
 
-_deps/eigen3-src/Eigen/src/Core/arch/Default/Settings.h:
-
-_deps/eigen3-src/Eigen/src/Core/Transpose.h:
-
-_deps/eigen3-src/Eigen/src/Core/products/SelfadjointMatrixVector.h:
+Linux/include/eigen3/Eigen/QR:
 
 /usr/include/c++/11/atomic:
 
@@ -1413,21 +1439,33 @@ _deps/eigen3-src/Eigen/src/Core/products/SelfadjointMatrixVector.h:
 
 /usr/include/c++/11/bits/exception_defines.h:
 
+Linux/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h:
+
+/opt/root/v6-26-10/include/TFitResultPtr.h:
+
+/usr/include/bits/fp-fast.h:
+
+Linux/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h:
+
 /usr/include/bits/setjmp.h:
+
+Linux/include/eigen3/Eigen/src/Householder/HouseholderSequence.h:
 
 /usr/include/c++/11/stdlib.h:
 
-_deps/eigen3-src/Eigen/src/Core/Reverse.h:
-
 /opt/root/v6-26-10/include/TMatrix.h:
 
-_deps/eigen3-src/Eigen/src/SVD/BDCSVD.h:
+/usr/include/c++/11/iterator:
+
+/opt/root/v6-26-10/include/TInterpreter.h:
 
 /usr/include/bits/types/__fpos_t.h:
 
 /opt/genie/3_02_02/include/GENIE/Framework/GHEP/GHepStatus.h:
 
 /usr/include/bits/types/clock_t.h:
+
+Linux/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h:
 
 /usr/include/c++/11/aarch64-redhat-linux/bits/atomic_word.h:
 
@@ -1437,13 +1475,15 @@ _deps/eigen3-src/Eigen/src/SVD/BDCSVD.h:
 
 /usr/include/sys/single_threaded.h:
 
-_deps/eigen3-src/Eigen/src/Core/functors/StlFunctors.h:
-
 /usr/include/bits/types/timer_t.h:
 
 /usr/include/bits/mathcalls.h:
 
+/usr/include/bits/iscanonical.h:
+
 /usr/include/c++/11/bits/specfun.h:
+
+Linux/include/eigen3/Eigen/src/LU/FullPivLU.h:
 
 /usr/include/c++/11/limits:
 
@@ -1452,12 +1492,6 @@ _deps/eigen3-src/Eigen/src/Core/functors/StlFunctors.h:
 /usr/include/bits/time.h:
 
 /usr/include/c++/11/tr1/bessel_function.tcc:
-
-/usr/include/c++/11/climits:
-
-_deps/eigen3-src/Eigen/src/Core/Inverse.h:
-
-/usr/include/c++/11/tr1/exp_integral.tcc:
 
 /usr/include/c++/11/tr1/hypergeometric.tcc:
 
@@ -1469,39 +1503,23 @@ _deps/eigen3-src/Eigen/src/Core/Inverse.h:
 
 /usr/include/bits/posix2_lim.h:
 
+Linux/include/eigen3/Eigen/src/Core/CoreEvaluators.h:
+
 /usr/include/c++/11/tr1/poly_hermite.tcc:
 
 /usr/include/c++/11/bits/std_mutex.h:
 
 /usr/include/c++/11/tr1/riemann_zeta.tcc:
 
-/usr/include/errno.h:
-
-/usr/include/c++/11/bits/alloc_traits.h:
-
-_deps/eigen3-src/Eigen/src/Core/TriangularMatrix.h:
-
 /usr/include/c++/11/algorithm:
 
-_deps/eigen3-src/Eigen/src/Geometry/arch/Geometry_SIMD.h:
-
-_deps/eigen3-src/Eigen/src/Core/CwiseTernaryOp.h:
-
-_deps/eigen3-src/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h:
-
-/usr/include/bits/types/struct_tm.h:
-
-_deps/eigen3-src/Eigen/src/Core/SolverBase.h:
-
-_deps/eigen3-src/Eigen/src/Core/products/Parallelizer.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/lib/gcc/aarch64-redhat-linux/11/include/float.h:
+Linux/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h:
 
 /usr/include/bits/timex.h:
 
 /usr/include/c++/11/math.h:
+
+Linux/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h:
 
 /opt/root/v6-26-10/include/TVector3.h:
 
@@ -1517,37 +1535,27 @@ _deps/eigen3-src/Eigen/src/Core/products/Parallelizer.h:
 
 /opt/root/v6-26-10/include/TMatrixT.h:
 
+Linux/include/eigen3/Eigen/src/Core/Swap.h:
+
 /opt/root/v6-26-10/include/TMatrixFBasefwd.h:
-
-/opt/root/v6-26-10/include/TSchemaHelper.h:
-
-/opt/root/v6-26-10/include/RVersion.h:
-
-/opt/root/v6-26-10/include/TMatrixDBasefwd.h:
 
 /opt/root/v6-26-10/include/TArrayD.h:
 
-/opt/root/v6-26-10/include/TH1.h:
+Linux/include/eigen3/Eigen/src/Core/IndexedView.h:
 
 /opt/root/v6-26-10/include/TVectorDfwd.h:
+
+/opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightNuXSecCOH.h:
+
+/opt/root/v6-26-10/include/TMatrixTUtils.h:
 
 /opt/root/v6-26-10/include/TMatrixFfwd.h:
 
 /opt/genie/3_02_02/include/GENIE/Framework/Utils/Range1.h:
 
-_deps/eigen3-src/Eigen/src/Cholesky/LDLT.h:
-
 /opt/root/v6-26-10/include/TMatrixFUtils.h:
 
 /opt/root/v6-26-10/include/TObjArray.h:
-
-/usr/include/bits/types/__fpos64_t.h:
-
-_deps/eigen3-src/Eigen/src/Core/IO.h:
-
-/usr/include/asm/errno.h:
-
-_deps/eigen3-src/Eigen/src/Core/MapBase.h:
 
 /opt/root/v6-26-10/include/TRotation.h:
 
@@ -1565,17 +1573,21 @@ _deps/eigen3-src/Eigen/src/Core/MapBase.h:
 
 /opt/root/v6-26-10/include/TAttMarker.h:
 
+Linux/include/eigen3/Eigen/src/Householder/Householder.h:
+
 /opt/root/v6-26-10/include/TNamed.h:
 
-/opt/root/v6-26-10/include/ROOT/TypeTraits.hxx:
+/usr/include/c++/11/bits/std_abs.h:
+
+Linux/include/eigen3/Eigen/src/Core/arch/NEON/TypeCasting.h:
+
+/usr/include/bits/math-vector.h:
+
+/usr/include/c++/11/memory:
 
 /opt/root/v6-26-10/include/TUUID.h:
 
-_deps/eigen3-src/Eigen/src/Core/Matrix.h:
-
 /opt/root/v6-26-10/include/TH3.h:
-
-_deps/eigen3-src/Eigen/src/misc/RealSvd2x2.h:
 
 /usr/include/c++/11/bits/align.h:
 
@@ -1587,13 +1599,11 @@ _deps/eigen3-src/Eigen/src/misc/RealSvd2x2.h:
 
 /usr/include/c++/11/pstl/glue_memory_defs.h:
 
-_deps/eigen3-src/Eigen/src/Core/products/TriangularSolverVector.h:
-
-/opt/root/v6-26-10/include/ESTLType.h:
-
 /opt/root/v6-26-10/include/Bytes.h:
 
 /usr/include/c++/11/bits/parse_numbers.h:
+
+Linux/include/eigen3/Eigen/src/Core/Reverse.h:
 
 /opt/root/v6-26-10/include/TSeqCollection.h:
 
@@ -1605,15 +1615,11 @@ _deps/eigen3-src/Eigen/src/Core/products/TriangularSolverVector.h:
 
 /opt/root/v6-26-10/include/TVirtualQConnection.h:
 
-_deps/eigen3-src/Eigen/Dense:
-
 /usr/include/c++/11/bits/istream.tcc:
 
 /opt/root/v6-26-10/include/TVectorFfwd.h:
 
 /opt/root/v6-26-10/include/TVirtualRWMutex.h:
-
-_deps/eigen3-src/Eigen/src/Core/arch/Default/Half.h:
 
 /usr/include/c++/11/ext/string_conversions.h:
 
@@ -1633,61 +1639,53 @@ _deps/eigen3-src/Eigen/src/Core/arch/Default/Half.h:
 
 /usr/include/c++/11/bits/stl_map.h:
 
-_deps/eigen3-src/Eigen/src/Core/DenseStorage.h:
-
-_deps/eigen3-src/Eigen/src/Core/Solve.h:
-
-_deps/eigen3-src/Eigen/src/Core/NoAlias.h:
-
 /usr/include/c++/11/unordered_set:
 
 /usr/include/c++/11/bits/stl_vector.h:
 
 /usr/include/c++/11/bits/unordered_set.h:
 
-_deps/eigen3-src/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h:
-
 /opt/root/v6-26-10/include/TBuffer.h:
 
 /opt/root/v6-26-10/include/TBranch.h:
 
-_deps/eigen3-src/Eigen/src/LU/InverseImpl.h:
-
 /opt/genie/3_02_02/include/GENIE/Framework/EventGen/EventRecord.h:
 
-_deps/eigen3-src/Eigen/src/Core/PermutationMatrix.h:
+/usr/include/stdc-predef.h:
+
+/usr/lib/gcc/aarch64-redhat-linux/11/include/float.h:
+
+Linux/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h:
 
 /opt/root/v6-26-10/include/TClonesArray.h:
 
 /opt/genie/3_02_02/include/GENIE/Framework/Conventions/GMode.h:
 
+/usr/include/c++/11/bits/enable_special_members.h:
+
+Linux/include/eigen3/Eigen/src/Core/DenseBase.h:
+
 /usr/include/bits/types/error_t.h:
 
 /opt/genie/3_02_02/include/GENIE/Framework/Interaction/Interaction.h:
 
-/opt/root/v6-26-10/include/RConfigure.h:
-
-_deps/eigen3-src/Eigen/src/Core/CwiseNullaryOp.h:
+Linux/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h:
 
 /opt/genie/3_02_02/include/GENIE/Framework/Conventions/RefFrame.h:
 
-_deps/eigen3-src/Eigen/src/Eigenvalues/RealQZ.h:
-
 /usr/include/bits/types/__sigset_t.h:
+
+Linux/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h:
 
 /opt/root/v6-26-10/include/TH3D.h:
 
-/opt/genie/3_02_02/include/GENIE/Framework/Interaction/InitialState.h:
+Linux/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h:
 
-_deps/eigen3-src/Eigen/src/Core/products/SelfadjointRank2Update.h:
+/opt/genie/3_02_02/include/GENIE/Framework/Interaction/InitialState.h:
 
 /usr/include/c++/11/pstl/glue_algorithm_defs.h:
 
 /opt/genie/3_02_02/include/GENIE/Framework/Interaction/InteractionType.h:
-
-_deps/eigen3-src/Eigen/src/Cholesky/LLT.h:
-
-_deps/eigen3-src/Eigen/src/Core/util/IntegralConstant.h:
 
 /opt/genie/3_02_02/include/GENIE/Framework/Interaction/Kinematics.h:
 
@@ -1695,7 +1693,9 @@ _deps/eigen3-src/Eigen/src/Core/util/IntegralConstant.h:
 
 /opt/genie/3_02_02/include/GENIE/Framework/Interaction/XclsTag.h:
 
-_deps/eigen3-src/Eigen/src/Core/Block.h:
+/usr/include/limits.h:
+
+/opt/genie/3_02_02/include/GENIE/Framework/ParticleData/BaryonResonance.h:
 
 /opt/genie/3_02_02/include/GENIE/Framework/Interaction/KPhaseSpace.h:
 
@@ -1703,11 +1703,7 @@ _deps/eigen3-src/Eigen/src/Core/Block.h:
 
 /opt/genie/3_02_02/include/GENIE/Framework/Ntuple/NtpMCEventRecord.h:
 
-_deps/eigen3-src/Eigen/src/Core/util/Constants.h:
-
 /opt/genie/3_02_02/include/GENIE/Framework/Ntuple/NtpMCRecordI.h:
-
-_deps/eigen3-src/Eigen/src/plugins/MatrixCwiseUnaryOps.h:
 
 /opt/genie/3_02_02/include/GENIE/Framework/Ntuple/NtpMCRecHeader.h:
 
@@ -1719,17 +1715,13 @@ _deps/eigen3-src/Eigen/src/plugins/MatrixCwiseUnaryOps.h:
 
 /opt/root/v6-26-10/include/ROOT/RConcurrentHashColl.hxx:
 
-_deps/eigen3-src/Eigen/src/Core/CwiseUnaryOp.h:
+Linux/include/eigen3/Eigen/src/Core/Fuzzy.h:
 
 /opt/root/v6-26-10/include/ROOT/TRWSpinLock.hxx:
-
-_deps/eigen3-src/Eigen/src/Core/functors/AssignmentFunctors.h:
 
 /opt/root/v6-26-10/include/ROOT/TSpinMutex.hxx:
 
 /usr/include/c++/11/chrono:
-
-/usr/include/c++/11/mutex:
 
 /opt/root/v6-26-10/include/TPad.h:
 
@@ -1739,23 +1731,31 @@ _deps/eigen3-src/Eigen/src/Core/functors/AssignmentFunctors.h:
 
 /opt/root/v6-26-10/include/TQObject.h:
 
-/opt/genie/3_02_02/include/GENIE/Physics/HadronTransport/INukeHadroFates2018.h:
-
-/opt/root/v6-26-10/include/TInterpreterValue.h:
-
 /usr/include/c++/11/bits/concept_check.h:
 
 /opt/root/v6-26-10/include/GuiTypes.h:
 
+/usr/lib/gcc/aarch64-redhat-linux/11/include/syslimits.h:
+
 /usr/include/bits/local_lim.h:
+
+/usr/include/c++/11/cwchar:
+
+Linux/include/eigen3/Eigen/src/Core/DiagonalProduct.h:
 
 /usr/include/c++/11/bits/stl_heap.h:
 
 /opt/root/v6-26-10/include/Buttons.h:
 
-_deps/eigen3-src/Eigen/src/Core/arch/Default/TypeCasting.h:
-
 /opt/root/v6-26-10/include/TAttBBox2D.h:
+
+/usr/include/c++/11/bits/exception.h:
+
+Linux/include/eigen3/Eigen/Core:
+
+Linux/include/eigen3/Eigen/Dense:
+
+Linux/include/eigen3/Eigen/src/Core/CwiseUnaryView.h:
 
 /usr/include/c++/11/typeinfo:
 
@@ -1766,6 +1766,10 @@ _deps/eigen3-src/Eigen/src/Core/arch/Default/TypeCasting.h:
 /opt/root/v6-26-10/include/TPave.h:
 
 /opt/root/v6-26-10/include/TAxis.h:
+
+/usr/include/bits/types/sigset_t.h:
+
+Linux/include/eigen3/Eigen/src/Core/MapBase.h:
 
 /opt/root/v6-26-10/include/TAttAxis.h:
 
@@ -1785,198 +1789,194 @@ _deps/eigen3-src/Eigen/src/Core/arch/Default/TypeCasting.h:
 
 /usr/include/c++/11/cfloat:
 
-_deps/eigen3-src/Eigen/src/Core/Map.h:
+/opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightNuXSecCCQEvec.h:
+
+Linux/include/eigen3/Eigen/src/Core/NumTraits.h:
+
+Linux/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h:
 
 /opt/root/v6-26-10/include/TAtt3D.h:
-
-_deps/eigen3-src/Eigen/Core:
-
-_deps/eigen3-src/Eigen/src/Core/util/DisableStupidWarnings.h:
-
-/usr/include/c++/11/bits/stl_construct.h:
-
-/usr/lib/gcc/aarch64-redhat-linux/11/include/arm_fp16.h:
-
-/usr/include/bits/endian.h:
-
-_deps/eigen3-src/Eigen/src/Core/products/GeneralMatrixVector.h:
-
-/usr/include/c++/11/complex:
-
-/usr/include/c++/11/sstream:
-
-_deps/eigen3-src/Eigen/src/Core/util/Meta.h:
-
-_deps/eigen3-src/Eigen/src/Core/Product.h:
-
-_deps/eigen3-src/Eigen/src/Core/util/ForwardDeclarations.h:
-
-/usr/include/limits.h:
-
-/opt/genie/3_02_02/include/GENIE/Framework/ParticleData/BaryonResonance.h:
-
-_deps/eigen3-src/Eigen/src/Core/util/StaticAssert.h:
-
-/usr/include/c++/11/bits/basic_string.h:
-
-_deps/eigen3-src/Eigen/src/Core/util/XprHelper.h:
-
-/usr/include/c++/11/clocale:
-
-_deps/eigen3-src/Eigen/src/Core/util/SymbolicIndex.h:
-
-_deps/eigen3-src/Eigen/src/Core/NumTraits.h:
-
-_deps/eigen3-src/Eigen/src/Core/MathFunctions.h:
-
-_deps/eigen3-src/Eigen/src/Core/GenericPacketMath.h:
-
-_deps/eigen3-src/Eigen/src/Core/MathFunctionsImpl.h:
-
-/usr/include/bits/math-vector.h:
-
-/usr/include/c++/11/memory:
-
-_deps/eigen3-src/Eigen/src/Core/NestByValue.h:
-
-/usr/include/c++/11/bits/node_handle.h:
-
-_deps/eigen3-src/Eigen/src/Core/products/GeneralBlockPanelKernel.h:
-
-_deps/eigen3-src/Eigen/src/Core/arch/Default/ConjHelper.h:
-
-_deps/eigen3-src/Eigen/src/Core/arch/Default/BFloat16.h:
-
-/usr/lib/gcc/aarch64-redhat-linux/11/include/syslimits.h:
-
-_deps/eigen3-src/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h:
-
-/usr/include/c++/11/bits/stl_numeric.h:
-
-/usr/include/linux/close_range.h:
-
-_deps/eigen3-src/Eigen/src/Core/arch/NEON/TypeCasting.h:
-
-/opt/root/v6-26-10/include/TCanvas.h:
-
-_deps/eigen3-src/Eigen/src/Core/arch/NEON/MathFunctions.h:
-
-_deps/eigen3-src/Eigen/src/plugins/BlockMethods.h:
-
-_deps/eigen3-src/Eigen/src/Core/functors/UnaryFunctors.h:
-
-/opt/root/v6-26-10/include/TDirectoryFile.h:
-
-_deps/eigen3-src/Eigen/src/Core/functors/NullaryFunctors.h:
-
-_deps/eigen3-src/Eigen/src/Core/util/IndexedViewHelper.h:
-
-_deps/eigen3-src/Eigen/src/Core/util/ReshapedHelper.h:
-
-_deps/eigen3-src/Eigen/src/Geometry/Hyperplane.h:
-
-_deps/eigen3-src/Eigen/src/Core/Array.h:
-
-/usr/include/c++/11/cstdint:
-
-_deps/eigen3-src/Eigen/src/Core/DenseCoeffsBase.h:
-
-/usr/include/c++/11/iterator:
-
-/opt/root/v6-26-10/include/TInterpreter.h:
-
-_deps/eigen3-src/Eigen/src/plugins/CommonCwiseUnaryOps.h:
-
-_deps/eigen3-src/Eigen/src/plugins/IndexedViewMethods.h:
-
-_deps/eigen3-src/Eigen/src/Core/MatrixBase.h:
-
-_deps/eigen3-src/Eigen/src/Core/Swap.h:
-
-_deps/eigen3-src/Eigen/src/plugins/CommonCwiseBinaryOps.h:
-
-/opt/root/v6-26-10/include/TVirtualIsAProxy.h:
-
-_deps/eigen3-src/Eigen/src/Core/products/GeneralMatrixMatrix.h:
-
-_deps/eigen3-src/Eigen/src/plugins/MatrixCwiseBinaryOps.h:
-
-_deps/eigen3-src/Eigen/src/Core/BooleanRedux.h:
-
-/usr/include/bits/iscanonical.h:
-
-_deps/eigen3-src/Eigen/src/Core/EigenBase.h:
-
-_deps/eigen3-src/Eigen/src/Core/CoreEvaluators.h:
-
-/opt/genie/3_02_02/include/GENIE/RwCalculators/GReWeightNuXSecCOH.h:
-
-/opt/root/v6-26-10/include/TMatrixTUtils.h:
-
-_deps/eigen3-src/Eigen/src/Core/AssignEvaluator.h:
-
-_deps/eigen3-src/Eigen/src/Core/GeneralProduct.h:
-
-_deps/eigen3-src/Eigen/src/Core/Assign.h:
-
-_deps/eigen3-src/Eigen/src/Core/ArithmeticSequence.h:
-
-_deps/eigen3-src/Eigen/src/Core/ArrayBase.h:
-
-/usr/include/c++/11/bits/codecvt.h:
-
-_deps/eigen3-src/Eigen/src/Core/util/Macros.h:
-
-_deps/eigen3-src/Eigen/src/Core/arch/NEON/Complex.h:
-
-_deps/eigen3-src/Eigen/src/plugins/ArrayCwiseUnaryOps.h:
-
-_deps/eigen3-src/Eigen/src/plugins/ArrayCwiseBinaryOps.h:
-
-_deps/eigen3-src/Eigen/src/Core/ReturnByValue.h:
-
-/usr/include/c++/11/bits/stl_multimap.h:
-
-/usr/lib/gcc/aarch64-redhat-linux/11/include/arm_bf16.h:
-
-_deps/eigen3-src/Eigen/src/Core/CwiseBinaryOp.h:
-
-/usr/include/c++/11/bits/predefined_ops.h:
-
-_deps/eigen3-src/Eigen/src/Core/SelfCwiseBinaryOp.h:
-
-/opt/root/v6-26-10/include/TFitResultPtr.h:
-
-_deps/eigen3-src/Eigen/src/Core/StableNorm.h:
-
-/usr/include/c++/11/bits/hashtable.h:
-
-_deps/eigen3-src/Eigen/src/Core/Stride.h:
-
-_deps/eigen3-src/Eigen/src/Core/Ref.h:
-
-_deps/eigen3-src/Eigen/src/Core/IndexedView.h:
-
-/usr/include/sys/types.h:
-
-_deps/eigen3-src/Eigen/src/Core/DiagonalMatrix.h:
-
-_deps/eigen3-src/Eigen/src/Core/Diagonal.h:
-
-_deps/eigen3-src/Eigen/src/Core/util/ConfigureVectorization.h:
-
-_deps/eigen3-src/Eigen/src/Core/Redux.h:
-
-_deps/eigen3-src/Eigen/src/Core/Fuzzy.h:
 
 /usr/include/bits/mathcalls-narrow.h:
 
 /opt/root/v6-26-10/include/THStack.h:
 
-_deps/eigen3-src/Eigen/src/Core/CommaInitializer.h:
+/usr/include/bits/endianness.h:
 
-_deps/eigen3-src/Eigen/src/Core/SelfAdjointView.h:
+Linux/include/eigen3/Eigen/src/plugins/ReshapedMethods.h:
 
-_deps/eigen3-src/Eigen/src/Core/SolveTriangular.h:
+Linux/include/eigen3/Eigen/src/Geometry/Hyperplane.h:
 
-_deps/eigen3-src/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h:
+Linux/include/eigen3/Eigen/src/Core/util/Macros.h:
+
+Linux/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h:
+
+Linux/include/eigen3/Eigen/src/Householder/BlockHouseholder.h:
+
+Linux/include/eigen3/Eigen/src/Core/ArrayWrapper.h:
+
+Linux/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h:
+
+/usr/include/c++/11/bits/stl_construct.h:
+
+/usr/lib/gcc/aarch64-redhat-linux/11/include/arm_fp16.h:
+
+/usr/include/c++/11/bits/stl_multimap.h:
+
+/usr/lib/gcc/aarch64-redhat-linux/11/include/arm_bf16.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/c++/11/complex:
+
+/usr/include/c++/11/sstream:
+
+Linux/include/eigen3/Eigen/src/SVD/BDCSVD.h:
+
+Linux/include/eigen3/Eigen/src/Core/util/MKL_support.h:
+
+Linux/include/eigen3/Eigen/src/Core/util/Memory.h:
+
+/usr/include/c++/11/bits/refwrap.h:
+
+Linux/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:
+
+Linux/include/eigen3/Eigen/src/Core/util/IntegralConstant.h:
+
+Linux/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h:
+
+Linux/include/eigen3/Eigen/src/Core/Product.h:
+
+Linux/include/eigen3/Eigen/src/Core/arch/Default/TypeCasting.h:
+
+Linux/include/eigen3/Eigen/src/Core/arch/NEON/MathFunctions.h:
+
+Linux/include/eigen3/Eigen/src/Core/arch/NEON/Complex.h:
+
+Linux/include/eigen3/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h:
+
+Linux/include/eigen3/Eigen/src/Core/arch/Default/Settings.h:
+
+Linux/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h:
+
+Linux/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h:
+
+/usr/include/c++/11/bits/locale_classes.h:
+
+/usr/include/bits/types/FILE.h:
+
+Linux/include/eigen3/Eigen/src/Core/util/ReshapedHelper.h:
+
+/opt/root/v6-26-10/include/ROOT/TypeTraits.hxx:
+
+Linux/include/eigen3/Eigen/src/Core/ArithmeticSequence.h:
+
+Linux/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:
+
+/opt/root/v6-26-10/include/RtypesCore.h:
+
+/usr/include/c++/11/bits/functexcept.h:
+
+Linux/include/eigen3/Eigen/src/Core/MatrixBase.h:
+
+Linux/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h:
+
+Linux/include/eigen3/Eigen/src/Core/EigenBase.h:
+
+/usr/include/bits/types/locale_t.h:
+
+Linux/include/eigen3/Eigen/src/Core/ArrayBase.h:
+
+/opt/genie/3_02_02/include/GENIE/Physics/HadronTransport/INukeHadroFates2018.h:
+
+/opt/root/v6-26-10/include/TInterpreterValue.h:
+
+Linux/include/eigen3/Eigen/src/Core/DenseStorage.h:
+
+Linux/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h:
+
+/opt/root/v6-26-10/include/TLegend.h:
+
+Linux/include/eigen3/Eigen/src/Core/NestByValue.h:
+
+Linux/include/eigen3/Eigen/src/Core/ReturnByValue.h:
+
+/opt/root/v6-26-10/include/TSchemaHelper.h:
+
+/opt/root/v6-26-10/include/RVersion.h:
+
+Linux/include/eigen3/Eigen/src/Core/util/IndexedViewHelper.h:
+
+/opt/root/v6-26-10/include/TMatrixDBasefwd.h:
+
+Linux/include/eigen3/Eigen/src/Core/NoAlias.h:
+
+Linux/include/eigen3/Eigen/src/Core/PlainObjectBase.h:
+
+Linux/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h:
+
+Linux/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h:
+
+Linux/include/eigen3/Eigen/src/Core/Stride.h:
+
+Linux/include/eigen3/Eigen/src/Core/Map.h:
+
+Linux/include/eigen3/Eigen/src/LU/arch/InverseSize4.h:
+
+Linux/include/eigen3/Eigen/src/Core/Ref.h:
+
+Linux/include/eigen3/Eigen/src/Core/VectorBlock.h:
+
+/usr/include/c++/11/mutex:
+
+Linux/include/eigen3/Eigen/src/Core/Reshaped.h:
+
+Linux/include/eigen3/Eigen/src/Core/Transpose.h:
+
+/opt/root/v6-26-10/include/TParticlePDG.h:
+
+Linux/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h:
+
+Linux/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h:
+
+Linux/include/eigen3/Eigen/src/Core/Diagonal.h:
+
+Linux/include/eigen3/Eigen/src/Core/PermutationMatrix.h:
+
+Linux/include/eigen3/Eigen/src/Core/Redux.h:
+
+Linux/include/eigen3/Eigen/src/Core/GeneralProduct.h:
+
+/opt/root/v6-26-10/include/ESTLType.h:
+
+Linux/include/eigen3/Eigen/src/Core/Solve.h:
+
+/usr/include/c++/11/tr1/exp_integral.tcc:
+
+Linux/include/eigen3/Eigen/src/Core/Inverse.h:
+
+Linux/include/eigen3/Eigen/src/Core/SolverBase.h:
+
+Linux/include/eigen3/Eigen/src/Core/Transpositions.h:
+
+/usr/include/bits/long-double.h:
+
+/opt/root/v6-26-10/include/ROOT/RStringView.hxx:
+
+Linux/include/eigen3/Eigen/src/Core/GenericPacketMath.h:
+
+Linux/include/eigen3/Eigen/src/Core/SelfAdjointView.h:
+
+/opt/root/v6-26-10/include/TIterator.h:
+
+Linux/include/eigen3/Eigen/src/Core/SolveTriangular.h:
+
+/usr/include/c++/11/cwctype:
+
+Linux/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h:
+
+/opt/root/v6-26-10/include/TH1.h:
+
+Linux/include/eigen3/Eigen/src/Core/products/Parallelizer.h:
+
+Linux/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h:

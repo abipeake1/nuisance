@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [[ -z ${NUISANCE} ]]; then
+  echo "NUISANCE environment variable is not set"
+  echo "Getting the sample list depends on this"
+  echo "Please do:" 
+  echo "export NUISANCE=YOUR_INSTALL && ./nuissamples"
+  exit
+fi
+
+for line in $(grep compare $NUISANCE/src/FCN/SampleList.cxx); do
+  if [[ "${line}" != *"compare"* ]]; then
+    continue
+  fi
+  line=${line//\!name\.compare\(/}
+  line=${line//\(/}
+  line=${line//\)/}
+  line=${line//\"/}
+  line=${line//\{}
+
+  if [[ $line != *$1* ]]; then
+    continue
+  fi
+
+  echo ${2}${line}${3}
+done
