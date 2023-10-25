@@ -59,3 +59,12 @@ install(TARGETS nuishistrange DESTINATION bin)
 
 add_library(nusystematics_pca STATIC nusystematics_pca.cxx) #add new library with functions for PCA
 target_link_libraries(nusystematics_pca CoreTargets GeneratorLinkDependencies)
+
+CPMFindPackage(
+    NAME fmt
+    GIT_TAG 10.1.1
+    GITHUB_REPOSITORY fmtlib/fmt
+)
+
+add_executable(geniezexp_version2 geniezexp_version2.cxx) #add new library with functions for PCA
+target_link_libraries(geniezexp_version2 CoreTargets GeneratorLinkDependencies fmt)
