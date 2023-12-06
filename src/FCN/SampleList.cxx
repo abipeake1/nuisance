@@ -181,6 +181,8 @@
 #ifdef MicroBooNE_ENABLED
 #include "MicroBooNE_CCInc_XSec_2DPcos_nu.h"
 #include "MicroBooNE_CC1MuNp_XSec_1D_nu.h"
+#include "MicroBooNE_CC1MuNp_XSec_1D_nu.h"
+#include "test1.h"
 #endif
 
 #ifdef MINERvA_ENABLED
@@ -1098,9 +1100,22 @@ MeasurementBase *CreateSample(nuiskey samplekey) {
              !name.compare("MicroBooNE_CC1MuNp_XSec_1Dcosp_nu") ||
              !name.compare("MicroBooNE_CC1MuNp_XSec_1Dthetamup_nu")) {
     return (new MicroBooNE_CC1MuNp_XSec_1D_nu(samplekey));
+  }
+  else if (!name.compare("MicroBooNE_CC1Mu1p_XSec_1D_nu") ||
+           !name.compare("MicroBooNE_CC1Mu1p_XSec_1DMuonMomentum_nu") ||
+           !name.compare("MicroBooNE_CC1Mu1p_XSec_1DDeltaPT_nu") ||
+           !name.compare("MicroBooNE_CC1Mu1p_XSec_1DDeltaAlphaT_nu") ||
+           !name.compare("MicroBooNE_CC1Mu1p_XSec_1DDeltaPhiT_nu") ||
+           !name.compare("MicroBooNE_CC1Mu1p_XSec_1DMuonCosTheta_nu") ||
+           !name.compare("MicroBooNE_CC1Mu1p_XSec_1DProtonCosTheta_nu") ||
+           !name.compare("MicroBooNE_CC1Mu1p_XSec_1DDeltaPn_nu") ||
+           !name.compare("MicroBooNE_CC1Mu1p_XSec_1DDeltaPtx_nu") ||
+           !name.compare("MicroBooNE_CC1Mu1p_XSec_1DDeltaPty_nu") ||
+           !name.compare("MicroBooNE_CC1Mu1p_XSec_1DECal_nu")) {
+    return (new MicroBooNE_CC1Mu1p_XSec_1D_nu(samplekey));
   } else
-#endif
 
+#endif 
 #ifdef MINERvA_ENABLED
       /*
       MINERvA Samples

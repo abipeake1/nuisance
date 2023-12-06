@@ -209,7 +209,7 @@ void MicroBooNE_CC1Mu1p_XSec_1D_nu::FillEventVariables(FitEvent* event) {
 
   // ECal energy reconstruction
   double ECal =  MuonEnergy + ProtonKE + BE; // GeV
-
+  std::cout<<"ECal"<<ECal<<std::endl;
   // QE Energy Reconstruction
 
   double EQENum = 2 * (NeutronMass_GeV - BE) * MuonEnergy - (BE*BE - 2 * NeutronMass_GeV *BE + MuonMass_GeV * MuonMass_GeV + DeltaM2);

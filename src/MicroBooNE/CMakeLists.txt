@@ -19,7 +19,10 @@
 set(MicroBooNE_Impl_Files
   MicroBooNE_CCInc_XSec_2DPcos_nu.cxx
   MicroBooNE_CC1MuNp_XSec_1D_nu.cxx
+  MicroBooNE_CC1Mu1p_XSec_1D_nu.cxx
   MicroBooNE_SignalDef.cxx
+  test1.cxx
+  newsignaldef.cxx
 )
 
 add_library(MicroBooNE SHARED ${MicroBooNE_Impl_Files})
