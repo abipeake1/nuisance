@@ -1,0 +1,11 @@
+<nuisance>  
+<config GENIEWeightEngine_CCQEMode="kModeZExp" />
+  <config GENIETune="G18_10a_02_11b"/>   
+  <config UseSVDInverse="1" />
+  <DUNERwt ConfigFHiCL="/root/software/nuisance_version2/nuisance/Micro_Boone/zexp_headerparams_G18_10a_02_11b.fcl" />
+  <parameter type="nusyst_parameter" name="b1" nominal="0"  /> 
+  <parameter type="nusyst_parameter" name="b2" nominal="0" /> 
+  <parameter type="nusyst_parameter" name="b3" nominal="0" /> 
+  <parameter type="nusyst_parameter" name="b4" nominal="0" />  <!-- repeat for parameters of interest -->
+  <sample name="MicroBooNE_CC1MuNp_XSec_1DPmu_nu" input="GENIE:/root/software/nuisance_version2/nuisance/Micro_Boone/microboone_allchannels.root"  type="FREE" norm="1.0/"/>
+</nuisance>

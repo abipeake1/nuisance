@@ -1,0 +1,10 @@
+<nuisance>
+  <config GENIEWeightEngine_CCQEMode="kModeZExp" />
+  <config UseSVDInverse="1" />
+  <config GENIETune="G21_11a_00_000"/>   
+  <parameter name="ZExpA1CCQE" nominal="0"   type="genie_parameter" />
+  <parameter name="ZExpA2CCQE" nominal="0"  type="genie_parameter" />
+  <parameter name="ZExpA3CCQE" nominal="0"   type="genie_parameter" />
+  <parameter name="ZExpA4CCQE" nominal="0"  type="genie_parameter" />   
+  <sample name="MicroBooNE_CC1Mu1p_XSec_1DDeltaPT_nu" input="GENIE:/root/software/nuisance_version2/nuisance/Micro_Boone/data/G21_11a_00_000_events_microboone.root"  type="FREE" norm="1.0/"/>
+</nuisance>
