@@ -24,6 +24,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <Eigen/Dense>
 using namespace std;
 
 class TH2D;
@@ -44,10 +45,27 @@ public:
 
   /// Additional smearing matrix multiplication by Ac
   void ConvertEventRates();
+  double GetLikelihood();
 
+  //Validating the Chi2
+  double GetMaskedChi2(Eigen::VectorXd &data, Eigen::VectorXd &prediction, Eigen::MatrixXd &covar, int bin_to_skip);
+
+  std::string objSuffix; 
+  std::string inputFile;
 private:
   TMatrixD* fSmearingMatrix;
-  enum Distribution { kDeltaPT, kDeltaAlphaT, kDeltaPhiT, kMuonCosTheta, kProtonCosTheta, kMuonMomentum, kProtonMomentum, kDeltaPn, kDeltaPtx, kDeltaPty, kECal, kEQE };
+  enum Distribution { kDeltaPT=0, 
+  kDeltaAlphaT=1, 
+  kDeltaPhiT=2, 
+  kMuonCosTheta=3, 
+  kProtonCosTheta=4, 
+  kMuonMomentum=5, 
+  kProtonMomentum=6, 
+  kDeltaPn=7, 
+  kDeltaPtx=8, 
+  kDeltaPty=9, 
+  kECal=10, 
+  kEQE=11 };
   Distribution fDist;
 
 };

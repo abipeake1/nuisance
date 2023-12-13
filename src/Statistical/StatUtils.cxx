@@ -1733,8 +1733,10 @@ TMatrixD *StatUtils::GetMatrixFromTextFile(std::string covfile, int dimx,
 
 //*******************************************************************
 TMatrixD *StatUtils::GetMatrixFromRootFile(std::string covfile,
-    std::string histname) {
+                                           std::string histname) {
   //*******************************************************************
+
+  TDirectory *ogd = gDirectory;
 
   std::string inputfile = covfile + ";" + histname;
   std::vector<std::string> splitfile = GeneralUtils::ParseToStr(inputfile, ";");
@@ -1761,6 +1763,9 @@ TMatrixD *StatUtils::GetMatrixFromRootFile(std::string covfile,
 
     delete mat;
     tempfile->Close();
+    if (ogd) {
+      gDirectory = ogd;
+    }
 
     return newmat;
   }
@@ -1776,6 +1781,9 @@ TMatrixD *StatUtils::GetMatrixFromRootFile(std::string covfile,
 
     delete matsym;
     tempfile->Close();
+    if (ogd) {
+      gDirectory = ogd;
+    }
 
     return newmat;
   }
@@ -1791,13 +1799,18 @@ TMatrixD *StatUtils::GetMatrixFromRootFile(std::string covfile,
 
     delete mathist;
     tempfile->Close();
+    if (ogd) {
+      gDirectory = ogd;
+    }
 
     return newmat;
+  }
+  if (ogd) {
+    gDirectory = ogd;
   }
 
   return NULL;
 }
-
 //*******************************************************************
 TMatrixDSym *StatUtils::GetCovarFromTextFile(std::string covfile, int dim) {
   //*******************************************************************

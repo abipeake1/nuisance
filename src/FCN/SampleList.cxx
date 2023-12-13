@@ -182,7 +182,7 @@
 #include "MicroBooNE_CCInc_XSec_2DPcos_nu.h"
 #include "MicroBooNE_CC1MuNp_XSec_1D_nu.h"
 #include "MicroBooNE_CC1MuNp_XSec_1D_nu.h"
-#include "test1.h"
+#include "MicroBooNE_CC1Mu1p_XSec_1D_nu.h"
 #endif
 
 #ifdef MINERvA_ENABLED

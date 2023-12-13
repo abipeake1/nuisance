@@ -21,6 +21,69 @@
 #include "MicroBooNE_SignalDef.h"
 #include "TH2D.h"
 #include "TH1D.h"
+#include <Eigen/Dense>
+
+Eigen::VectorXd MaskBin(Eigen::VectorXd const &inv, int bin_to_skip) {
+  int nbins = inv.size();
+  int nbins_masked = nbins - 1;
+  int nbins_after = nbins_masked - bin_to_skip;
+
+  Eigen::VectorXd data_masked = Eigen::VectorXd::Zero(nbins_masked);
+
+  // e.g. inv = [1,2,3,4], bin_to_skip = 1
+
+  // Assign the first bin_to_skip = 1 entries to keep
+  data_masked.head(bin_to_skip) = inv.head(bin_to_skip);
+  // Assign the last nbins_after = nbins_masked - bin_to_skip = 3 - 1 = 2;
+  data_masked.tail(nbins_after) = inv.tail(nbins_after);
+
+  return data_masked;
+}
+
+Eigen::MatrixXd MaskBin(Eigen::MatrixXd const &inm, int bin_to_skip) {
+  int nbins = inm.rows();
+  int nbins_masked = nbins - 1;
+  int nbins_after = nbins_masked - bin_to_skip;
+
+  Eigen::MatrixXd data_masked = Eigen::MatrixXd::Zero(nbins_masked, nbins_masked);
+
+  data_masked.matrix().topLeftCorner(bin_to_skip, bin_to_skip) =
+      inm.topLeftCorner(bin_to_skip, bin_to_skip);
+  data_masked.matrix().topRightCorner(bin_to_skip, nbins_after) =
+      inm.topRightCorner(bin_to_skip, nbins_after);
+  data_masked.matrix().bottomLeftCorner(nbins_after, bin_to_skip) =
+      inm.bottomLeftCorner(nbins_after, bin_to_skip);
+  data_masked.matrix().bottomRightCorner(nbins_after, nbins_after) =
+      inm.bottomRightCorner(nbins_after, nbins_after);
+  return data_masked;
+}
+
+void MaskedChi2(Eigen::VectorXd const &data, Eigen::VectorXd const &prediction,
+                Eigen::MatrixXd const &covar) {
+
+  Eigen::VectorXd diff = (prediction - data);
+  std::cout << "chi2 for all bins = "
+            << (diff.transpose() * covar.inverse() * diff) << std::endl;
+
+  for (int i = 0; i < data.size(); ++i) {
+    Eigen::VectorXd masked_diff = MaskBin(diff, i);
+    Eigen::MatrixXd masked_covar = MaskBin(covar, i);
+
+    std::cout << "chi2 except bin[" << i << "] = "
+              << (masked_diff.transpose() * masked_covar.inverse() *
+                  masked_diff)
+              << std::endl;
+  }
+}
+
+Eigen::MatrixXd InflateCovarWithMCHistError(Eigen::MatrixXd const &inm, Eigen::VectorXd const &mc_stats_error) {
+  Eigen::MatrixXd covar = inm;
+
+  for(int i = 0; i < covar.rows(); ++i){
+    covar(i,i) += std::pow(mc_stats_error[i],2);
+  }
+  return covar;
+}
 
 //********************************************************************
 MicroBooNE_CC1Mu1p_XSec_1D_nu::MicroBooNE_CC1Mu1p_XSec_1D_nu(nuiskey samplekey) {
@@ -28,7 +91,7 @@ MicroBooNE_CC1Mu1p_XSec_1D_nu::MicroBooNE_CC1Mu1p_XSec_1D_nu(nuiskey samplekey) 
   fSettings = LoadSampleSettings(samplekey);
   std::cout<<"enetered fileMicroBooNE_CC1Mu1p_XSec_1D_nu.cc" <<std::endl;
   std::string name = fSettings.GetS("name");
-  std::string objSuffix;
+  
 //work out which sample you need, and set axii
   if (!name.compare("MicroBooNE_CC1Mu1p_XSec_1DDeltaPT_nu")) {
     fDist = kDeltaPT;
@@ -107,12 +170,12 @@ MicroBooNE_CC1Mu1p_XSec_1D_nu::MicroBooNE_CC1Mu1p_XSec_1D_nu(nuiskey samplekey) 
   fSettings.DefineAllowedTargets("Ar");
   fSettings.DefineAllowedSpecies("numu");
   FinaliseSampleSettings();
-  std::cout<<"done fSettings:"<<std::endl;
+  
   // Load data ---------------------------------------------------------
-  std::string inputFile = FitPar::GetDataBase() + "/MicroBooNE/CC1Mu1p/All_XSecs_Combined_v08_00_00_52.root";
+  inputFile = FitPar::GetDataBase() + "/MicroBooNE/CC1Mu1p/All_XSecs_Combined_v08_00_00_52.root";
   SetDataFromRootFile(inputFile, "FullUnc_" + objSuffix + "Plot");
   ScaleData(1E-38);
-  std::cout<<"loaded data:"<<std::endl;
+  
   // ScaleFactor for DiffXSec/cm2/Nucleus // Already multiplied by the Ar mass number
   fScaleFactor = GetEventHistogram()->Integral("width") / fNEvents * 1E-38 / TotalIntegratedFlux() * 40;
 
@@ -135,6 +198,7 @@ MicroBooNE_CC1Mu1p_XSec_1D_nu::MicroBooNE_CC1Mu1p_XSec_1D_nu(nuiskey samplekey) 
     }
   }
 
+ 
   // Final setup ------------------------------------------------------
   FinaliseMeasurement();
 };
@@ -203,13 +267,15 @@ void MicroBooNE_CC1Mu1p_XSec_1D_nu::FillEventVariables(FitEvent* event) {
   double ProtonMass_GeV = 0.938272; // GeV 
   double MuonMass_GeV = 0.106; // GeV 
   double DeltaM2 =  TMath::Power(NeutronMass_GeV,2.) - TMath::Power(ProtonMass_GeV,2.); // GeV^2
-  double MuonEnergy = event->GetHMFSParticle(13)->fP.E();
-  double ProtonEnergy = event->GetParticleP4(SignalProtonIndices.at(0) ).E();
+  double MuonEnergy = (event->GetHMFSParticle(13)->fP.E())/1000.0; //GeV/c Abi 
+  //std::cout<<"MuonEnergy"<<MuonEnergy<<std::endl;
+  double ProtonEnergy = (event->GetParticleP4(SignalProtonIndices.at(0) ).E())/1000.0; //GeV/c Abi;
+  //std::cout<<"ProtonEnergy"<<ProtonEnergy<<std::endl;
   double ProtonKE = ProtonEnergy - ProtonMass_GeV;
 
   // ECal energy reconstruction
-  double ECal =  MuonEnergy + ProtonKE + BE; // GeV
-  std::cout<<"ECal"<<ECal<<std::endl;
+  double ECal =  ((MuonEnergy) + (ProtonKE) + BE); // GeV
+  //std::cout<<"ECal"<<ECal<<std::endl;
   // QE Energy Reconstruction
 
   double EQENum = 2 * (NeutronMass_GeV - BE) * MuonEnergy - (BE*BE - 2 * NeutronMass_GeV *BE + MuonMass_GeV * MuonMass_GeV + DeltaM2);
@@ -237,16 +303,18 @@ void MicroBooNE_CC1Mu1p_XSec_1D_nu::FillEventVariables(FitEvent* event) {
 
   double PL = 0.5 * R - (MAPrime * MAPrime + vSumT.Mag() * vSumT.Mag()) / (2 * R);
 
-  double DeltaPn = TMath::Sqrt( vSumT.Mag() * vSumT.Mag() + PL * PL );
-
+  double DeltaPn = TMath::Sqrt( (vSumT.Mag() * vSumT.Mag()) +(PL * PL) )/1000.0;
+  //std::cout<<"DeltaPn: "<< DeltaPn<< std::endl;
+  //std::cout<<"fDist: "<< fDist<< std::endl;
   // https://journals.aps.org/prd/pdf/10.1103/PhysRevD.101.092001
 
   TVector3 UnitZ(0,0,1);
   //double Ptx = ( UnitZ.Cross(vpmuT) ).Dot(vSumT) / vpmuT.Mag(); -original in code 
   double DeltaPtx = DeltaPT*TMath::Sin(DeltaAlphaT);//changed by Abi 06/12/23
-  std::cout<< "Ptx is :"<<DeltaPtx<< "------------------------"<<std::endl;
+  //std::cout<< "Ptx is :"<<DeltaPtx<< "------------------------"<<std::endl;
   double Pty = - (vpmuT).Dot(vSumT) / vpmuT.Mag();
 
+  double DeltaPty = DeltaPT*TMath::Sin(DeltaAlphaT);//changed by Abi 06/12/23
   //----------------------------------------//
 
   if (fDist == kDeltaPT) {
@@ -278,15 +346,15 @@ void MicroBooNE_CC1Mu1p_XSec_1D_nu::FillEventVariables(FitEvent* event) {
   }
 
   else if (fDist == kDeltaPn) {
-    fXVar = kDeltaPn;
+    fXVar = DeltaPn;
   }
 
   else if (fDist == kDeltaPtx) {
-    fXVar = kDeltaPtx;
+    fXVar = DeltaPtx;
   }
 
   else if (fDist == kDeltaPty) {
-    fXVar = kDeltaPty;
+    fXVar = DeltaPty;
   }
 
   else if (fDist == kECal) {
@@ -296,6 +364,13 @@ void MicroBooNE_CC1Mu1p_XSec_1D_nu::FillEventVariables(FitEvent* event) {
   else if (fDist == kEQE) {
     fXVar = EQE;
   }
+ 
+
+ //Get Chi2 using raw covariance matrix (cov file in Measument1D.cxx)
+ //Do in Eigen , copy from ROOT to Eigen data structure
+ //(O-E)^2/uncertainty
+
+ 
 
 }
 
@@ -305,9 +380,11 @@ void MicroBooNE_CC1Mu1p_XSec_1D_nu::ConvertEventRates() {
 
   // Apply Weiner-SVD additional smearing Ac
   int n = fMCHist->GetNbinsX();
+  
   TVectorD v(n);
   for (int i=0; i<n; i++) {
     v(i) = fMCHist->GetBinContent(i+1);
+    //std::cout<< "bin content for bin" << i << "is" <<  v(i) << std::endl;
   }
 
   TVectorD vs = (*fSmearingMatrix) * v;
@@ -315,4 +392,79 @@ void MicroBooNE_CC1Mu1p_XSec_1D_nu::ConvertEventRates() {
   for (int i=0; i<n; i++) {
     fMCHist->SetBinContent(i+1, vs(i));
   }
+  
+  //Calculating the Chi2 manually using fMCHist fDataHist and the covariance matrix using NUISANCE untils
+  string projectionname = fMCHist->GetName();
+  Double_t Chi2_test = StatUtils::GetChi2FromCov(fDataHist, fMCHist, fFullCovar);
+  std::cout<<"Chi2 using Nuisance Utils is     "   << projectionname << "  =   "<< Chi2_test  <<std::endl;
+
+ 
+
 }
+
+double MicroBooNE_CC1Mu1p_XSec_1D_nu::GetLikelihood(){
+
+  //Get data from histogram 
+  TH1D* relevant_histogram = PlotUtils::GetTH1DFromRootFile(inputFile, "FullUnc_" + objSuffix + "Plot");
+  TH1D* mc_histogram = PlotUtils::GetTH1DFromRootFile(inputFile, "Genie_v3_0_6_Out_Of_The_Box_" + objSuffix + "Plot");
+  Eigen::VectorXd binned_data = Eigen::VectorXd::Zero(relevant_histogram->GetNbinsX());
+ 
+for(int i = 0; i < relevant_histogram->GetNbinsX(); ++i){
+  binned_data[i] = relevant_histogram->GetBinContent(i+1); // +1 is important to skip the underflow bin.
+  
+}
+
+int numberofbins_ref = mc_histogram->GetNbinsX();
+//TVectorD mc_data_ref(numberofbins_ref);
+Eigen::VectorXd mc_data_binned_ref = Eigen::VectorXd::Zero(numberofbins_ref);
+
+
+  for (int i=0; i<numberofbins_ref; i++) {
+    mc_data_binned_ref[i] = mc_histogram->GetBinContent(i+1);
+  }
+
+int numberofbins_MC = fMCHist->GetNbinsX();
+TVectorD mc_data(numberofbins_MC);
+Eigen::VectorXd mc_data_binned = Eigen::VectorXd::Zero(numberofbins_MC);
+Eigen::VectorXd mc_data_error = Eigen::VectorXd::Zero(numberofbins_MC);
+std::cout<< "bin " << "  binned data " << " Nuisance MC" << "  MicroBooNE MC"  << "  data-Nuisance" << " data-MicroBooNE " << std::endl;
+  for (int i=0; i<numberofbins_MC; i++) {
+    mc_data_binned[i] = fMCHist->GetBinContent(i+1);
+    mc_data_binned[i] = mc_data_binned[i]*(1e38);
+
+    mc_data_error[i] = fMCHist->GetBinError(i+1);
+    mc_data_error[i] = mc_data_error[i]*(1e38);
+    std::cout<< i << "--" << binned_data[i] << " -- " << mc_data_binned[i] << " -- " << mc_data_binned_ref[i] << " -- " << binned_data[i] - mc_data_binned_ref[i] <<  " -- "  << binned_data[i] - mc_data_binned[i]  << std::endl;
+  }
+
+
+  //TMatrixDSym* rCovar = new TMatrixDSym;
+  TMatrixDSym *rCovar = StatUtils::GetCovarFromRootFile("/root/software/nuisance_version2/nuisance/data/MicroBooNE/CC1Mu1p/All_XSecs_Combined_v08_00_00_52.root",   
+    "UnfCov_" + objSuffix + "Plot" );
+  //Get Covariance matrix from ROOT file
+  Eigen::MatrixXd eCovar = Eigen::MatrixXd::Zero(rCovar->GetNrows(),rCovar->GetNrows());
+  for(int i = 0; i < rCovar->GetNrows(); ++i){
+    for(int j = 0; j < rCovar->GetNrows(); ++j){
+    eCovar(i,j) = (*rCovar)(i,j); 
+    }
+  }
+  //Now calculate Chi2
+    double det_Matrix = eCovar.determinant();
+    std::cout<<"determinant is  "  << det_Matrix <<std::endl;
+    Eigen::MatrixXd inverse_eCovar=eCovar.inverse();
+    double Chi2_MC = (binned_data-mc_data_binned).transpose()*  inverse_eCovar *(binned_data-mc_data_binned);
+    double Chi2_ref = (binned_data-mc_data_binned_ref).transpose()*  inverse_eCovar *(binned_data-mc_data_binned_ref);
+    
+    std::cout<< "Chi2_MC" << objSuffix << " is =   " << Chi2_MC <<std::endl;
+    std::cout<< "Chi2_ref" << objSuffix << " is =   " << Chi2_ref <<std::endl;
+
+    std::cout<<"___________________________________  MaskedChi2(binned_data, mc_data_binned_ref, eCovar)  MicroBooNE MC data"<<std::endl;
+    MaskedChi2(binned_data, mc_data_binned_ref, eCovar);
+    std::cout<<"___________________________________ MaskedChi2(binned_data, mc_data_binned_ref, eCovar) Nuisance MC data"<<std::endl;
+    MaskedChi2(binned_data, mc_data_binned, eCovar);
+    //std::cout<<"___________________________________ InflateCovarWithMCHistError(Eigen::MatrixXd const &inm, TH1 const *MCHist) MicroBooNE MC data"<<std::endl;
+    double Chi_2_inflated =  (binned_data-mc_data_binned).transpose()*  (InflateCovarWithMCHistError(eCovar, mc_data_error)).inverse() *(binned_data-mc_data_binned); 
+    std::cout<<"___________________________ inflated Chi2 =  " << Chi_2_inflated <<std::endl;
+
+return Chi2_MC, Chi2_ref, Chi_2_inflated;
+};
